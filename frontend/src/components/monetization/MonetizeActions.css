@@ -1,0 +1,47 @@
+.ps-mon {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  align-items: center;
+}
+
+.ps-mon.compact {
+  gap: 6px;
+}
+
+.ps-mon button {
+  border: none;
+  padding: 10px 18px;
+  border-radius: 999px;
+  font-weight: 700;
+  font-size: 0.875rem;
+  cursor: pointer;
+  transition: transform 0.12s ease, filter 0.12s ease;
+}
+
+.ps-mon button:hover:not(:disabled) {
+  transform: translateY(-1px);
+  filter: brightness(1.06);
+}
+
+.ps-mon button:disabled {
+  opacity: 0.5;
+  cursor: wait;
+}
+
+.ps-mon-tip {
+  background: rgba(212, 175, 55, 0.15);
+  color: #e6c04a;
+  border: 1px solid rgba(212, 175, 55, 0.45) !important;
+}
+
+.ps-mon-sub {
+  background: linear-gradient(135deg, #2a2410, #1a1510);
+  color: #d4af37;
+  border: 1px solid rgba(212, 175, 55, 0.4) !important;
+}
+
+.ps-mon-buy {
+  background: linear-gradient(135deg, #c9a227, #e6c04a);
+  color: #0a0a0a;
+}

@@ -1,0 +1,34 @@
+PowerStream — frontend_export.zip manifest
+==========================================
+Location: frontend/frontend_export.zip
+Approx. size: ~18 MB (varies with working tree)
+
+CONTENTS
+--------
+- src/                 Full application source (all routes, pages, components, styles)
+  Includes: PowerFeed, PowerGram, PowerReel, PowerLine, TV stations, Auth pages,
+  App.jsx routing, lib/api, context, ui-authority/, etc.
+- public/              Static assets served by Vite (logos paths, manifest, tv JSON, etc.)
+- index.html           Vite entry HTML
+- vite.config.js / vite.config.mjs
+- package.json / package-lock.json
+- tailwind.config.js / postcss.config.cjs
+- eslint.config.js / jsconfig.json
+- favicon.ico
+- env.example.txt      Template only — copy to .env / .env.local as needed (secrets NOT in zip)
+- README.md
+
+EXCLUDED (by design)
+--------------------
+- node_modules/, dist/
+- .env, .env.local, .env.production (never commit or export secrets)
+- studio-app/, ui-backup-*, large backup archives under frontend/
+
+RESTORE / BUILD
+---------------
+1. Unzip frontend_export.zip into a folder.
+2. npm install
+3. npm run dev (or your project’s build script)
+
+Verified in archive: App.jsx, main.jsx, PowerFeed/Gram/Reel/Line, Login/Register,
+StationsHub, full ui-authority tree.

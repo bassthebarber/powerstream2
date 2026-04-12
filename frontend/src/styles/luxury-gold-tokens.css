@@ -1,0 +1,29 @@
+/**
+ * PowerStream — Black & Gold luxury tokens (no orange accent).
+ */
+:root {
+  --lux-bg: #0a0a0a;
+  --lux-bg-elevated: #0f0f0f;
+  --lux-gold: #ffd700;
+  --lux-gold-mid: #e6c200;
+  --lux-gold-dark: #c9a227;
+  --lux-gold-deep: #8a7018;
+  --lux-gold-muted: rgba(255, 215, 0, 0.14);
+  --lux-gold-glow: rgba(255, 215, 0, 0.22);
+  --lux-gold-shine: rgba(255, 248, 220, 0.35);
+  --lux-gradient-gold: linear-gradient(135deg, #fff4a8 0%, var(--lux-gold) 35%, var(--lux-gold-dark) 72%, var(--lux-gold-deep) 100%);
+  --lux-gradient-gold-text: linear-gradient(110deg, #fff8dc 0%, var(--lux-gold) 38%, var(--lux-gold-dark) 100%);
+  --lux-gradient-metallic: linear-gradient(
+    125deg,
+    #5c4a10 0%,
+    #c9a227 22%,
+    #ffe566 45%,
+    #ffd700 52%,
+    #c9a227 68%,
+    #6b5812 100%
+  );
+  --lux-glass: rgba(8, 8, 10, 0.78);
+  --lux-border-gold: rgba(255, 215, 0, 0.22);
+  --lux-border-gold-strong: rgba(255, 215, 0, 0.42);
+  --lux-ease: cubic-bezier(0.22, 1, 0.36, 1);
+}

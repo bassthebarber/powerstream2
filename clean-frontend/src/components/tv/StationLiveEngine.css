@@ -1,0 +1,157 @@
+.ps-live-engine {
+  margin: 16px 0 24px;
+  padding: 16px;
+  background: rgba(0, 0, 0, 0.35);
+  border-radius: 12px;
+  border: 1px solid rgba(255, 215, 0, 0.2);
+}
+
+.ps-live-engine-banner {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 14px;
+}
+
+.ps-live-engine-live-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 800;
+  color: #ff6b6b;
+  font-size: 14px;
+}
+
+.ps-live-engine-viewers {
+  color: #aaa;
+  font-size: 14px;
+}
+
+.ps-live-engine-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 16px;
+}
+
+.ps-live-btn {
+  padding: 10px 18px;
+  border-radius: 8px;
+  border: none;
+  font-weight: 600;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.ps-live-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.ps-live-btn--gold {
+  background: linear-gradient(135deg, #ffd700, #c9a227);
+  color: #000;
+}
+
+.ps-live-btn--outline {
+  background: transparent;
+  border: 1px solid rgba(255, 215, 0, 0.5);
+  color: #ffd700;
+}
+
+.ps-live-btn--primary {
+  background: #c41e3a;
+  color: #fff;
+}
+
+.ps-live-btn--sm {
+  padding: 6px 12px;
+  font-size: 12px;
+}
+
+.ps-live-btn--danger {
+  background: rgba(180, 40, 40, 0.3);
+  color: #f88;
+}
+
+.ps-live-engine-owner {
+  padding-top: 12px;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.ps-live-engine-owner h4 {
+  margin: 0 0 8px;
+  color: #fff;
+}
+
+.ps-live-engine-hint,
+.ps-live-engine-mini {
+  font-size: 12px;
+  color: #888;
+  margin: 0 0 8px;
+}
+
+.ps-live-engine-input {
+  width: 100%;
+  max-width: 400px;
+  padding: 10px 12px;
+  border-radius: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  background: rgba(0, 0, 0, 0.4);
+  color: #fff;
+  margin-bottom: 10px;
+}
+
+.ps-live-engine-creds label {
+  display: block;
+  font-size: 11px;
+  color: #888;
+  margin-top: 10px;
+}
+
+.ps-live-code {
+  display: block;
+  padding: 10px;
+  background: #111;
+  border-radius: 6px;
+  font-size: 12px;
+  word-break: break-all;
+  color: #8f8;
+  margin-bottom: 4px;
+}
+
+.ps-live-engine-row {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-top: 12px;
+}
+
+.ps-live-engine-err {
+  color: #f66;
+  font-size: 13px;
+}
+
+.ps-live-modal {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10050;
+}
+
+.ps-live-modal-inner {
+  background: #1a1a1a;
+  padding: 24px;
+  border-radius: 12px;
+  max-width: 360px;
+  width: 90%;
+  border: 1px solid rgba(255, 215, 0, 0.3);
+}
+
+.ps-live-modal-inner h3 {
+  margin-top: 0;
+  color: #fff;
+}

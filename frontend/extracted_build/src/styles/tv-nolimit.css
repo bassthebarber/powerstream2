@@ -1,0 +1,550 @@
+/* frontend/src/styles/tv-nolimit.css */
+/* No Limit East Houston TV - MTV-inspired urban style */
+
+.tv-station--nolimit {
+  --station-primary: #ff0050;
+  --station-secondary: #00ff88;
+  --station-accent: #ffff00;
+  --station-bg: #0a0a0a;
+}
+
+/* ============================================
+   MTV-STYLE HERO
+   ============================================ */
+.nolimit-hero {
+  position: relative;
+  height: 80vh;
+  min-height: 500px;
+  overflow: hidden;
+  background: #0a0a0a;
+}
+
+.nolimit-hero-video {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.6;
+}
+
+.nolimit-hero-glitch {
+  position: absolute;
+  inset: 0;
+  background:
+    repeating-linear-gradient(
+      0deg,
+      transparent,
+      transparent 2px,
+      rgba(0, 0, 0, 0.1) 2px,
+      rgba(0, 0, 0, 0.1) 4px
+    );
+  pointer-events: none;
+  animation: scanlines 0.1s infinite linear;
+}
+
+@keyframes scanlines {
+  0% { transform: translateY(0); }
+  100% { transform: translateY(4px); }
+}
+
+.nolimit-hero-overlay {
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(135deg, rgba(255, 0, 80, 0.3) 0%, transparent 50%),
+    linear-gradient(225deg, rgba(0, 255, 136, 0.2) 0%, transparent 50%),
+    linear-gradient(to bottom, transparent 50%, #0a0a0a 100%);
+}
+
+.nolimit-hero-content {
+  position: relative;
+  z-index: 2;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 3rem;
+}
+
+.nolimit-hero-logo {
+  height: 80px;
+  width: auto;
+  margin-bottom: 1rem;
+  filter: drop-shadow(0 0 20px rgba(255, 0, 80, 0.5));
+}
+
+.nolimit-hero-title {
+  font-size: 5rem;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: -0.02em;
+  line-height: 0.9;
+  margin: 0 0 1rem;
+  color: #ffffff;
+  text-shadow:
+    4px 4px 0 #ff0050,
+    -2px -2px 0 #00ff88;
+}
+
+.nolimit-hero-subtitle {
+  font-size: 1.5rem;
+  color: #00ff88;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  margin: 0 0 2rem;
+}
+
+.nolimit-hero-actions {
+  display: flex;
+  gap: 1rem;
+}
+
+.nolimit-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 1rem 2rem;
+  background: #ff0050;
+  color: #ffffff;
+  font-size: 1rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  border: none;
+  border-radius: 0;
+  cursor: pointer;
+  transition: all 0.2s;
+  position: relative;
+  overflow: hidden;
+}
+
+.nolimit-btn::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+  transition: left 0.5s;
+}
+
+.nolimit-btn:hover::before {
+  left: 100%;
+}
+
+.nolimit-btn:hover {
+  transform: skewX(-5deg);
+  box-shadow: 4px 4px 0 #00ff88;
+}
+
+.nolimit-btn--secondary {
+  background: transparent;
+  border: 3px solid #00ff88;
+  color: #00ff88;
+}
+
+.nolimit-btn--secondary:hover {
+  background: #00ff88;
+  color: #0a0a0a;
+}
+
+/* ============================================
+   NOW PLAYING TICKER
+   ============================================ */
+.nolimit-ticker {
+  background: linear-gradient(90deg, #ff0050, #ff6b35, #ff0050);
+  padding: 0.75rem 0;
+  overflow: hidden;
+}
+
+.nolimit-ticker-content {
+  display: flex;
+  animation: ticker 30s linear infinite;
+  white-space: nowrap;
+}
+
+@keyframes ticker {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+.nolimit-ticker-item {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  padding: 0 3rem;
+  font-size: 0.875rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: #ffffff;
+}
+
+.nolimit-ticker-divider {
+  font-size: 1.5rem;
+  color: #ffff00;
+}
+
+/* ============================================
+   CONTENT SECTIONS
+   ============================================ */
+.nolimit-section {
+  padding: 3rem 2rem;
+  position: relative;
+}
+
+.nolimit-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 4px;
+  height: 100%;
+  background: linear-gradient(to bottom, #ff0050, #00ff88);
+}
+
+.nolimit-section-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 2rem;
+}
+
+.nolimit-section-title {
+  font-size: 2.5rem;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: -0.02em;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.nolimit-section-title::before {
+  content: '';
+  width: 40px;
+  height: 4px;
+  background: #ff0050;
+}
+
+.nolimit-view-all {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: #00ff88;
+  font-size: 0.875rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  text-decoration: none;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.nolimit-view-all:hover {
+  color: #ff0050;
+  transform: translateX(4px);
+}
+
+/* ============================================
+   VIDEO GRID - MTV STYLE
+   ============================================ */
+.nolimit-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 1.5rem;
+}
+
+.nolimit-video-card {
+  position: relative;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.nolimit-video-card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border: 3px solid transparent;
+  z-index: 2;
+  transition: border-color 0.3s;
+}
+
+.nolimit-video-card:hover::before {
+  border-color: #ff0050;
+}
+
+.nolimit-video-card:hover {
+  transform: scale(1.02) skewX(-1deg);
+  box-shadow: 8px 8px 0 #00ff88;
+}
+
+.nolimit-video-thumb {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s;
+}
+
+.nolimit-video-card:hover .nolimit-video-thumb {
+  transform: scale(1.1);
+}
+
+.nolimit-video-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to top,
+    rgba(0, 0, 0, 0.9) 0%,
+    transparent 50%
+  );
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 1rem;
+}
+
+.nolimit-video-new {
+  position: absolute;
+  top: 0.75rem;
+  left: 0.75rem;
+  padding: 0.25rem 0.5rem;
+  background: #ffff00;
+  color: #0a0a0a;
+  font-size: 0.625rem;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+.nolimit-video-hot {
+  position: absolute;
+  top: 0.75rem;
+  right: 0.75rem;
+  padding: 0.25rem 0.5rem;
+  background: #ff0050;
+  color: #ffffff;
+  font-size: 0.625rem;
+  font-weight: 900;
+  text-transform: uppercase;
+}
+
+.nolimit-video-title {
+  font-size: 1rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  margin: 0 0 0.25rem;
+  color: #ffffff;
+}
+
+.nolimit-video-artist {
+  font-size: 0.875rem;
+  color: #00ff88;
+  margin: 0;
+}
+
+.nolimit-video-play {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 60px;
+  height: 60px;
+  background: #ff0050;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  color: #ffffff;
+  opacity: 0;
+  transition: all 0.3s;
+}
+
+.nolimit-video-card:hover .nolimit-video-play {
+  opacity: 1;
+  transform: translate(-50%, -50%) scale(1.1);
+}
+
+/* ============================================
+   GENRE TABS
+   ============================================ */
+.nolimit-genres {
+  display: flex;
+  gap: 0.5rem;
+  padding: 1rem 2rem;
+  background: rgba(255, 255, 255, 0.03);
+  overflow-x: auto;
+}
+
+.nolimit-genre {
+  padding: 0.5rem 1rem;
+  background: transparent;
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  color: #ffffff;
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  cursor: pointer;
+  transition: all 0.2s;
+  white-space: nowrap;
+}
+
+.nolimit-genre:hover {
+  border-color: #ff0050;
+  color: #ff0050;
+}
+
+.nolimit-genre--active {
+  background: #ff0050;
+  border-color: #ff0050;
+  color: #ffffff;
+}
+
+/* ============================================
+   LIVE BANNER
+   ============================================ */
+.nolimit-live-banner {
+  background: linear-gradient(135deg, #ff0050 0%, #ff6b35 50%, #ff0050 100%);
+  padding: 1.5rem 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  animation: pulse-bg 2s ease-in-out infinite;
+}
+
+@keyframes pulse-bg {
+  0%, 100% { filter: brightness(1); }
+  50% { filter: brightness(1.1); }
+}
+
+.nolimit-live-info {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.nolimit-live-badge {
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.5rem 1rem;
+  background: #ffffff;
+  color: #ff0050;
+  font-size: 0.75rem;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+.nolimit-live-title {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #ffffff;
+}
+
+.nolimit-live-viewers {
+  font-size: 0.875rem;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+/* ============================================
+   SCHEDULE - MTV STYLE
+   ============================================ */
+.nolimit-schedule {
+  background: rgba(0, 255, 136, 0.05);
+}
+
+.nolimit-schedule-grid {
+  display: grid;
+  gap: 0;
+}
+
+.nolimit-schedule-item {
+  display: flex;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  transition: all 0.2s;
+}
+
+.nolimit-schedule-item:hover {
+  background: rgba(255, 0, 80, 0.1);
+}
+
+.nolimit-schedule-time {
+  width: 120px;
+  padding: 1rem;
+  background: rgba(0, 0, 0, 0.3);
+  font-size: 0.875rem;
+  font-weight: 700;
+  color: #00ff88;
+  flex-shrink: 0;
+}
+
+.nolimit-schedule-show {
+  flex: 1;
+  padding: 1rem;
+}
+
+.nolimit-schedule-show-title {
+  font-size: 1rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  margin: 0 0 0.25rem;
+}
+
+.nolimit-schedule-show-desc {
+  font-size: 0.75rem;
+  color: #888888;
+  margin: 0;
+}
+
+.nolimit-schedule-now {
+  background: rgba(255, 0, 80, 0.2);
+  border-left: 4px solid #ff0050;
+}
+
+/* ============================================
+   RESPONSIVE
+   ============================================ */
+@media (max-width: 768px) {
+  .nolimit-hero {
+    height: 60vh;
+  }
+
+  .nolimit-hero-content {
+    padding: 1.5rem;
+  }
+
+  .nolimit-hero-title {
+    font-size: 2.5rem;
+  }
+
+  .nolimit-hero-subtitle {
+    font-size: 1rem;
+  }
+
+  .nolimit-hero-actions {
+    flex-direction: column;
+  }
+
+  .nolimit-section-title {
+    font-size: 1.5rem;
+  }
+
+  .nolimit-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .nolimit-live-banner {
+    flex-direction: column;
+    gap: 1rem;
+    text-align: center;
+  }
+}
+

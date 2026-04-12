@@ -1,0 +1,208 @@
+.ps-bmanage {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 2rem 1.5rem 4rem;
+  background: #080808;
+  min-height: 100vh;
+  color: #e0dcd4;
+  font-family: "Segoe UI", system-ui, sans-serif;
+}
+
+.ps-bmanage-back {
+  color: #c9a227;
+  text-decoration: none;
+  font-size: 0.9rem;
+}
+
+.ps-bmanage h1 {
+  color: #f4e4a6;
+  letter-spacing: 0.06em;
+  margin-top: 1rem;
+}
+
+.ps-bmanage-sub {
+  color: #6a6358;
+  font-size: 0.85rem;
+}
+
+.ps-bmanage-label {
+  display: block;
+  margin-top: 1.25rem;
+  font-size: 0.7rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: #c9a227;
+}
+
+.ps-bmanage-input {
+  width: 100%;
+  max-width: 400px;
+  padding: 0.5rem 0.65rem;
+  background: #111;
+  border: 1px solid rgba(201, 162, 39, 0.35);
+  color: #eee;
+  border-radius: 4px;
+}
+
+.ps-bmanage-check {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-top: 1rem;
+  cursor: pointer;
+}
+
+.ps-bmanage h2,
+.ps-bmanage h3 {
+  margin-top: 1.75rem;
+  color: #c9a227;
+  font-size: 0.85rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.ps-bmanage-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.ps-bmanage-list li {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.5rem;
+  padding: 0.65rem 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.ps-bmanage-idx {
+  font-family: ui-monospace, monospace;
+  color: #c9a227;
+  min-width: 1.5rem;
+  padding-top: 0.4rem;
+}
+
+.ps-bmanage-v {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.ps-bmanage-v input {
+  padding: 0.4rem 0.5rem;
+  background: #0c0c0c;
+  border: 1px solid #333;
+  color: #ddd;
+  border-radius: 3px;
+}
+
+.ps-bmanage-url {
+  font-size: 0.75rem;
+  color: #8a8070 !important;
+}
+
+.ps-bmanage-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.ps-bmanage-actions button {
+  background: #1a1a1a;
+  border: 1px solid #444;
+  color: #ccc;
+  cursor: pointer;
+  border-radius: 3px;
+  padding: 0.2rem 0.45rem;
+}
+
+.ps-bmanage-actions .danger {
+  border-color: #633;
+  color: #e88;
+}
+
+.ps-bmanage-add {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  align-items: center;
+}
+
+.ps-bmanage-add input {
+  padding: 0.45rem 0.55rem;
+  background: #111;
+  border: 1px solid rgba(201, 162, 39, 0.3);
+  color: #eee;
+  border-radius: 4px;
+  min-width: 140px;
+}
+
+.ps-bmanage-add button {
+  background: linear-gradient(180deg, #d4af37, #a08020);
+  border: none;
+  color: #111;
+  font-weight: 700;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.ps-bmanage-msg {
+  margin-top: 1rem;
+  color: #8f8;
+}
+
+.ps-bmanage-save {
+  margin-top: 1.5rem;
+  padding: 0.75rem 2rem;
+  background: linear-gradient(180deg, #f4e4a6, #c9a227);
+  border: none;
+  color: #1a1508;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.ps-bmanage-save:disabled {
+  opacity: 0.5;
+}
+
+.ps-channel-page {
+  padding: 0 0 2rem;
+}
+
+.ps-channel-grid {
+  display: grid;
+  grid-template-columns: 1fr minmax(280px, 340px);
+  gap: 1.25rem;
+  align-items: start;
+}
+
+@media (max-width: 960px) {
+  .ps-channel-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.ps-channel-banner h2 {
+  margin: 0 0 0.25rem;
+  font-size: 0.75rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: #c9a227;
+}
+
+.ps-channel-banner p {
+  margin: 0 0 0.5rem;
+  color: #8a8070;
+  font-size: 0.85rem;
+}
+
+.ps-channel-dash-link {
+  display: inline-block;
+  color: #f4e4a6;
+  font-size: 0.85rem;
+  margin-bottom: 0.75rem;
+}

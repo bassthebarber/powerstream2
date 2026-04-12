@@ -1,0 +1,578 @@
+/* frontend/src/styles/tv-talent.css */
+/* Texas Got Talent TV - Showtime Spotlight Style */
+
+.tv-station--talent {
+  --station-primary: #ffd700;
+  --station-secondary: #ff6b35;
+  --station-accent: #00d4ff;
+  --station-bg: #0f0f15;
+}
+
+/* ============================================
+   SPOTLIGHT HERO
+   ============================================ */
+.tgt-hero {
+  position: relative;
+  height: 70vh;
+  min-height: 500px;
+  overflow: hidden;
+  background:
+    radial-gradient(ellipse at 50% 0%, rgba(255, 215, 0, 0.15) 0%, transparent 50%),
+    linear-gradient(180deg, #0f0f15 0%, #1a1a25 100%);
+}
+
+.tgt-hero-spotlight {
+  position: absolute;
+  top: -20%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 120%;
+  height: 80%;
+  background: radial-gradient(ellipse, rgba(255, 215, 0, 0.08) 0%, transparent 70%);
+  pointer-events: none;
+  animation: spotlight 4s ease-in-out infinite;
+}
+
+@keyframes spotlight {
+  0%, 100% { opacity: 0.6; }
+  50% { opacity: 1; }
+}
+
+.tgt-hero-stars {
+  position: absolute;
+  inset: 0;
+  background-image:
+    radial-gradient(2px 2px at 20% 30%, #ffd700 50%, transparent 50%),
+    radial-gradient(2px 2px at 40% 70%, #ffffff 50%, transparent 50%),
+    radial-gradient(1px 1px at 60% 20%, #ffd700 50%, transparent 50%),
+    radial-gradient(2px 2px at 80% 50%, #ffffff 50%, transparent 50%),
+    radial-gradient(1px 1px at 90% 80%, #ffd700 50%, transparent 50%);
+  animation: twinkle 3s ease-in-out infinite;
+}
+
+@keyframes twinkle {
+  0%, 100% { opacity: 0.3; }
+  50% { opacity: 0.7; }
+}
+
+.tgt-hero-content {
+  position: relative;
+  z-index: 2;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 2rem;
+}
+
+.tgt-hero-logo {
+  height: 100px;
+  width: auto;
+  margin-bottom: 1.5rem;
+  filter: drop-shadow(0 4px 20px rgba(255, 215, 0, 0.5));
+}
+
+.tgt-hero-title {
+  font-size: 4rem;
+  font-weight: 900;
+  margin: 0 0 0.5rem;
+  background: linear-gradient(135deg, #ffd700 0%, #ff6b35 50%, #ffd700 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-shadow: 0 4px 30px rgba(255, 215, 0, 0.4);
+}
+
+.tgt-hero-subtitle {
+  font-size: 1.5rem;
+  color: #ffffff;
+  text-transform: uppercase;
+  letter-spacing: 0.3em;
+  margin: 0 0 2rem;
+}
+
+.tgt-hero-tagline {
+  font-size: 1.125rem;
+  color: #888888;
+  margin: 0 0 2rem;
+  max-width: 500px;
+}
+
+.tgt-hero-actions {
+  display: flex;
+  gap: 1rem;
+}
+
+.tgt-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 1rem 2rem;
+  font-size: 1rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.tgt-btn--primary {
+  background: linear-gradient(135deg, #ffd700 0%, #ff6b35 100%);
+  color: #0f0f15;
+}
+
+.tgt-btn--primary:hover {
+  transform: translateY(-3px) scale(1.02);
+  box-shadow:
+    0 10px 30px rgba(255, 215, 0, 0.4),
+    0 0 60px rgba(255, 215, 0, 0.2);
+}
+
+.tgt-btn--secondary {
+  background: rgba(255, 255, 255, 0.1);
+  border: 2px solid #ffd700;
+  color: #ffd700;
+}
+
+.tgt-btn--secondary:hover {
+  background: #ffd700;
+  color: #0f0f15;
+}
+
+/* ============================================
+   LIVE SHOW BANNER
+   ============================================ */
+.tgt-live-banner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+  padding: 1.5rem 2rem;
+  background: linear-gradient(90deg, #ff6b35 0%, #ffd700 50%, #ff6b35 100%);
+  background-size: 200% 100%;
+  animation: shimmer 3s linear infinite;
+}
+
+@keyframes shimmer {
+  0% { background-position: 200% 0; }
+  100% { background-position: -200% 0; }
+}
+
+.tgt-live-badge {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 1rem;
+  background: #ff4757;
+  border-radius: 50px;
+  font-size: 0.875rem;
+  font-weight: 700;
+  color: #ffffff;
+  text-transform: uppercase;
+}
+
+.tgt-live-badge .pulse {
+  width: 10px;
+  height: 10px;
+  background: #ffffff;
+  border-radius: 50%;
+  animation: pulse 1.5s ease-in-out infinite;
+}
+
+.tgt-live-text {
+  font-size: 1.125rem;
+  font-weight: 700;
+  color: #0f0f15;
+}
+
+.tgt-live-cta {
+  padding: 0.5rem 1.5rem;
+  background: #0f0f15;
+  color: #ffd700;
+  font-size: 0.875rem;
+  font-weight: 600;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.tgt-live-cta:hover {
+  transform: scale(1.05);
+}
+
+/* ============================================
+   CONTESTANT SECTION
+   ============================================ */
+.tgt-contestants {
+  padding: 4rem 2rem;
+  background: linear-gradient(to bottom, #0f0f15, #15151d);
+}
+
+.tgt-section-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 2rem;
+}
+
+.tgt-section-title {
+  font-size: 2rem;
+  font-weight: 800;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.tgt-section-title span {
+  color: #ffd700;
+}
+
+/* ============================================
+   CONTESTANT CARDS
+   ============================================ */
+.tgt-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 2rem;
+}
+
+.tgt-contestant-card {
+  position: relative;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0.02));
+  border: 1px solid rgba(255, 215, 0, 0.1);
+  border-radius: 16px;
+  overflow: hidden;
+  cursor: pointer;
+  transition: all 0.4s;
+}
+
+.tgt-contestant-card:hover {
+  transform: translateY(-8px);
+  border-color: #ffd700;
+  box-shadow:
+    0 20px 40px rgba(0, 0, 0, 0.4),
+    0 0 40px rgba(255, 215, 0, 0.1);
+}
+
+.tgt-contestant-rank {
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  z-index: 2;
+  font-size: 2rem;
+}
+
+.tgt-contestant-media {
+  position: relative;
+  aspect-ratio: 4 / 3;
+  overflow: hidden;
+}
+
+.tgt-contestant-media img,
+.tgt-contestant-media video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s;
+}
+
+.tgt-contestant-card:hover .tgt-contestant-media img,
+.tgt-contestant-card:hover .tgt-contestant-media video {
+  transform: scale(1.1);
+}
+
+.tgt-contestant-media-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(15, 15, 21, 0.95) 0%, transparent 50%);
+}
+
+.tgt-contestant-play {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 70px;
+  height: 70px;
+  background: linear-gradient(135deg, #ffd700, #ff6b35);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  color: #0f0f15;
+  opacity: 0;
+  transition: all 0.3s;
+}
+
+.tgt-contestant-card:hover .tgt-contestant-play {
+  opacity: 1;
+  transform: translate(-50%, -50%) scale(1.1);
+}
+
+.tgt-contestant-info {
+  padding: 1.5rem;
+}
+
+.tgt-contestant-name {
+  font-size: 1.25rem;
+  font-weight: 700;
+  margin: 0 0 0.25rem;
+}
+
+.tgt-contestant-talent {
+  font-size: 0.875rem;
+  color: #ff6b35;
+  margin: 0 0 1rem;
+}
+
+.tgt-contestant-stats {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.tgt-stat {
+  display: flex;
+  flex-direction: column;
+}
+
+.tgt-stat-value {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #ffd700;
+}
+
+.tgt-stat-label {
+  font-size: 0.75rem;
+  color: #888888;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+.tgt-vote-btn {
+  width: 100%;
+  padding: 0.875rem;
+  background: linear-gradient(135deg, #ffd700, #ff6b35);
+  color: #0f0f15;
+  font-size: 1rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.tgt-vote-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(255, 215, 0, 0.4);
+}
+
+.tgt-vote-btn--voted {
+  background: #28a745;
+  color: #ffffff;
+}
+
+/* ============================================
+   SUBMIT PERFORMANCE PANEL
+   ============================================ */
+.tgt-submit-section {
+  padding: 4rem 2rem;
+  background: linear-gradient(135deg, rgba(255, 107, 53, 0.1), rgba(255, 215, 0, 0.05));
+  border-top: 1px solid rgba(255, 215, 0, 0.1);
+}
+
+.tgt-submit-card {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 3rem;
+  background: rgba(0, 0, 0, 0.5);
+  border: 1px solid rgba(255, 215, 0, 0.2);
+  border-radius: 20px;
+  text-align: center;
+}
+
+.tgt-submit-icon {
+  font-size: 4rem;
+  margin-bottom: 1.5rem;
+}
+
+.tgt-submit-title {
+  font-size: 2rem;
+  font-weight: 700;
+  margin: 0 0 0.5rem;
+  color: #ffd700;
+}
+
+.tgt-submit-description {
+  font-size: 1rem;
+  color: #888888;
+  margin: 0 0 2rem;
+  max-width: 500px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.tgt-submit-features {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+}
+
+.tgt-submit-feature {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.875rem;
+  color: #ffffff;
+}
+
+.tgt-submit-feature span {
+  color: #ffd700;
+}
+
+/* ============================================
+   LEADERBOARD
+   ============================================ */
+.tgt-leaderboard {
+  padding: 4rem 2rem;
+  background: #0f0f15;
+}
+
+.tgt-leaderboard-list {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.tgt-leaderboard-item {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  padding: 1.5rem;
+  background: rgba(255, 255, 255, 0.03);
+  border-radius: 12px;
+  margin-bottom: 1rem;
+  transition: all 0.3s;
+}
+
+.tgt-leaderboard-item:hover {
+  background: rgba(255, 255, 255, 0.05);
+  transform: translateX(8px);
+}
+
+.tgt-leaderboard-item--1 {
+  background: linear-gradient(135deg, rgba(255, 215, 0, 0.15), rgba(255, 215, 0, 0.05));
+  border: 1px solid rgba(255, 215, 0, 0.3);
+}
+
+.tgt-leaderboard-item--2 {
+  background: linear-gradient(135deg, rgba(192, 192, 192, 0.1), rgba(192, 192, 192, 0.05));
+}
+
+.tgt-leaderboard-item--3 {
+  background: linear-gradient(135deg, rgba(205, 127, 50, 0.1), rgba(205, 127, 50, 0.05));
+}
+
+.tgt-leaderboard-rank {
+  font-size: 2rem;
+  width: 60px;
+  text-align: center;
+}
+
+.tgt-leaderboard-avatar {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid rgba(255, 215, 0, 0.3);
+}
+
+.tgt-leaderboard-info {
+  flex: 1;
+}
+
+.tgt-leaderboard-name {
+  font-size: 1.125rem;
+  font-weight: 600;
+  margin: 0 0 0.25rem;
+}
+
+.tgt-leaderboard-talent {
+  font-size: 0.875rem;
+  color: #ff6b35;
+  margin: 0;
+}
+
+.tgt-leaderboard-votes {
+  text-align: right;
+}
+
+.tgt-leaderboard-votes-count {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #ffd700;
+}
+
+.tgt-leaderboard-votes-label {
+  font-size: 0.75rem;
+  color: #888888;
+}
+
+/* ============================================
+   RESPONSIVE
+   ============================================ */
+@media (max-width: 768px) {
+  .tgt-hero-title {
+    font-size: 2.5rem;
+  }
+
+  .tgt-hero-subtitle {
+    font-size: 1rem;
+    letter-spacing: 0.15em;
+  }
+
+  .tgt-hero-actions {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .tgt-btn {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .tgt-live-banner {
+    flex-direction: column;
+    gap: 1rem;
+    text-align: center;
+  }
+
+  .tgt-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .tgt-submit-card {
+    padding: 2rem;
+  }
+
+  .tgt-submit-features {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .tgt-leaderboard-item {
+    flex-wrap: wrap;
+  }
+}
+

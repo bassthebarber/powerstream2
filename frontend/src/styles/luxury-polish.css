@@ -1,0 +1,154 @@
+/**
+ * PowerStream — final production polish (motion, depth, transitions).
+ * Loaded after core theme files.
+ */
+
+/* ========== Route transition (paired with keyed shell in App.jsx) ========== */
+@keyframes ps-route-shell-enter {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+    filter: blur(6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+    filter: blur(0);
+  }
+}
+
+.ps-route-shell {
+  animation: ps-route-shell-enter 0.55s cubic-bezier(0.22, 1, 0.36, 1) both;
+  min-height: 100%;
+}
+
+/* ========== Loading / suspense shimmer ========== */
+@keyframes ps-shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+.ps-loading-shimmer {
+  position: relative;
+  overflow: hidden;
+  border-radius: 14px;
+  min-height: 120px;
+  background: linear-gradient(
+    105deg,
+    rgba(255, 255, 255, 0.03) 0%,
+    rgba(255, 255, 255, 0.06) 42%,
+    rgba(255, 215, 0, 0.07) 50%,
+    rgba(255, 255, 255, 0.05) 58%,
+    rgba(255, 255, 255, 0.03) 100%
+  );
+  background-size: 200% 100%;
+  animation: ps-shimmer 2.2s ease-in-out infinite;
+  border: 1px solid rgba(255, 215, 0, 0.1);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.04), 0 0 40px rgba(255, 215, 0, 0.04);
+}
+
+.ps-loading-shimmer__label {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: rgba(255, 255, 255, 0.45);
+  font-weight: 600;
+  font-size: 15px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+/* ========== Gold gradient text — slow metallic shine ========== */
+@keyframes ps-lux-gold-text-shine {
+  0%,
+  100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
+.ps-lux-gold-text,
+.ps-layout-header-title,
+.ps-page h1,
+.ps-lux-section-title,
+.ps-tv-stations-hero h1 {
+  background-image: linear-gradient(
+    110deg,
+    #fff8dc 0%,
+    #c9a227 18%,
+    #ffd700 32%,
+    #fff8dc 42%,
+    #ffd700 58%,
+    #c9a227 78%,
+    #fff8dc 100%
+  ) !important;
+  background-size: 220% auto !important;
+  -webkit-background-clip: text !important;
+  background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
+  animation: ps-lux-gold-text-shine 10s ease-in-out infinite !important;
+}
+
+/* Home landing title uses same treatment via class in premium-home */
+
+/* ========== Primary / ghost buttons (global utility) ========== */
+.ps-lux-btn {
+  position: relative;
+  overflow: hidden;
+  transition:
+    transform 0.2s cubic-bezier(0.22, 1, 0.36, 1),
+    box-shadow 0.35s ease,
+    filter 0.3s ease;
+}
+
+.ps-lux-btn::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    105deg,
+    transparent 38%,
+    rgba(255, 255, 255, 0.22) 48%,
+    rgba(255, 248, 220, 0.35) 50%,
+    transparent 62%
+  );
+  transform: translateX(-130%) skewX(-10deg);
+  transition: transform 0.65s cubic-bezier(0.22, 1, 0.36, 1);
+  pointer-events: none;
+}
+
+.ps-lux-btn:hover::after {
+  transform: translateX(130%) skewX(-10deg);
+}
+
+.ps-lux-btn:active {
+  transform: translateY(2px) scale(0.985);
+}
+
+@keyframes ps-lux-btn-idle-pulse {
+  0%,
+  100% {
+    box-shadow:
+      0 4px 28px rgba(255, 215, 0, 0.22),
+      0 0 24px rgba(255, 215, 0, 0.08),
+      inset 0 1px 0 rgba(255, 255, 255, 0.4);
+  }
+  50% {
+    box-shadow:
+      0 6px 36px rgba(255, 215, 0, 0.3),
+      0 0 40px rgba(255, 215, 0, 0.12),
+      inset 0 1px 0 rgba(255, 255, 255, 0.48);
+  }
+}
+
+.ps-lux-btn--primary {
+  animation: ps-lux-btn-idle-pulse 4.5s ease-in-out infinite;
+}

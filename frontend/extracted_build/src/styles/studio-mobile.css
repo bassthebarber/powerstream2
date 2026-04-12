@@ -1,0 +1,606 @@
+/* frontend/src/styles/studio-mobile.css */
+/* PowerStream Recording Studio Mobile Fixes */
+/* SUPER UPGRADE PACK - Task 6 */
+
+/* ============================================
+   STUDIO LAYOUT - MOBILE FOUNDATION
+   ============================================ */
+@media (max-width: 768px) {
+  .studio-container,
+  .recording-studio,
+  .studio-page {
+    padding: 12px !important;
+    padding-bottom: calc(12px + env(safe-area-inset-bottom)) !important;
+    overflow-x: hidden;
+  }
+
+  .studio-header {
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    gap: 12px !important;
+    margin-bottom: 16px;
+  }
+
+  .studio-header-title,
+  .studio-title {
+    font-size: 1.5rem !important;
+  }
+
+  .studio-header-subtitle {
+    font-size: 0.9rem;
+    color: #888;
+  }
+}
+
+/* ============================================
+   STUDIO CARDS & PANELS
+   ============================================ */
+@media (max-width: 480px) {
+  .studio-card,
+  .studio-panel {
+    padding: 12px !important;
+    border-radius: 12px !important;
+    margin-bottom: 12px !important;
+  }
+
+  .studio-card-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
+
+  .studio-card-title {
+    font-size: 1.1rem !important;
+  }
+}
+
+/* ============================================
+   STUDIO BUTTONS - SCALING FIX
+   ============================================ */
+@media (max-width: 480px) {
+  .studio-btn,
+  .studio-button {
+    padding: 10px 16px !important;
+    font-size: 0.9rem !important;
+    border-radius: 8px !important;
+    min-height: 44px; /* Touch target */
+  }
+
+  .studio-btn--large,
+  .studio-btn-lg {
+    width: 100% !important;
+    padding: 14px 20px !important;
+    font-size: 1rem !important;
+  }
+
+  .studio-btn-group {
+    flex-direction: column !important;
+    gap: 8px !important;
+    width: 100%;
+  }
+
+  .studio-btn-group .studio-btn {
+    width: 100% !important;
+  }
+
+  /* Recording button specific */
+  .record-btn,
+  .studio-record-btn {
+    width: 60px !important;
+    height: 60px !important;
+    font-size: 24px !important;
+    margin: 0 auto;
+  }
+
+  .record-btn--large {
+    width: 80px !important;
+    height: 80px !important;
+    font-size: 32px !important;
+  }
+}
+
+/* ============================================
+   STUDIO GRIDS - RESPONSIVE
+   ============================================ */
+@media (max-width: 768px) {
+  .studio-grid,
+  .studio-grid--2,
+  .studio-grid--3,
+  .studio-grid--4 {
+    grid-template-columns: 1fr !important;
+    gap: 12px !important;
+  }
+}
+
+@media (min-width: 481px) and (max-width: 768px) {
+  .studio-grid--3,
+  .studio-grid--4 {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+}
+
+/* ============================================
+   WAVEFORM & VISUALIZER - OVERFLOW FIX
+   ============================================ */
+@media (max-width: 480px) {
+  .waveform-container,
+  .audio-visualizer,
+  .studio-waveform,
+  .visualizer-canvas {
+    width: 100% !important;
+    max-width: 100% !important;
+    height: auto !important;
+    min-height: 60px;
+    max-height: 120px;
+    overflow: hidden;
+    border-radius: 8px;
+  }
+
+  .waveform-container canvas,
+  .audio-visualizer canvas,
+  .visualizer-canvas canvas {
+    width: 100% !important;
+    max-width: 100% !important;
+    height: 100% !important;
+    display: block;
+  }
+
+  /* Prevent horizontal scroll from canvas */
+  .studio-visualization-wrapper {
+    overflow: hidden;
+    width: 100%;
+  }
+}
+
+/* ============================================
+   MIXER & FADERS - MOBILE
+   ============================================ */
+@media (max-width: 480px) {
+  .studio-mixer,
+  .mixer-container {
+    overflow-x: auto !important;
+    -webkit-overflow-scrolling: touch;
+    padding-bottom: 12px !important;
+    margin: 0 -12px;
+    padding-left: 12px;
+    padding-right: 12px;
+  }
+
+  .studio-mixer-tracks,
+  .mixer-channels {
+    display: flex;
+    gap: 8px;
+    min-width: max-content;
+  }
+
+  .studio-mixer-channel,
+  .mixer-channel {
+    min-width: 56px !important;
+    max-width: 70px;
+    padding: 8px !important;
+    flex-shrink: 0;
+  }
+
+  .studio-fader,
+  .fader-track {
+    height: 100px !important;
+    width: 32px !important;
+    margin: 0 auto;
+  }
+
+  .fader-knob {
+    width: 28px !important;
+    height: 16px !important;
+  }
+
+  .mixer-channel-label {
+    font-size: 0.7rem !important;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+}
+
+/* ============================================
+   UPLOAD ZONE - MOBILE FIX
+   ============================================ */
+@media (max-width: 480px) {
+  .upload-zone,
+  .studio-upload-area {
+    padding: 24px 16px !important;
+    margin-bottom: 16px !important;
+    border-radius: 12px !important;
+  }
+
+  .upload-zone .upload-icon,
+  .studio-upload-icon {
+    font-size: 36px !important;
+    margin-bottom: 12px;
+  }
+
+  .upload-zone p,
+  .studio-upload-text {
+    font-size: 0.9rem !important;
+  }
+
+  /* Fix cut-off at bottom */
+  .studio-upload-wrapper {
+    padding-bottom: calc(20px + env(safe-area-inset-bottom)) !important;
+  }
+}
+
+/* ============================================
+   RECORDING CONTROLS - MOBILE
+   ============================================ */
+@media (max-width: 480px) {
+  .record-controls,
+  .studio-controls {
+    display: flex;
+    flex-wrap: wrap !important;
+    justify-content: center;
+    gap: 12px !important;
+    padding: 16px 0 !important;
+  }
+
+  .transport-controls {
+    display: flex;
+    gap: 16px;
+    justify-content: center;
+    width: 100%;
+  }
+
+  .transport-btn {
+    width: 50px !important;
+    height: 50px !important;
+    font-size: 20px !important;
+    border-radius: 50% !important;
+  }
+
+  .time-display,
+  .studio-time {
+    font-size: 1.5rem !important;
+    text-align: center;
+    width: 100%;
+    margin: 8px 0;
+  }
+}
+
+/* ============================================
+   ROYALTY TABLES - MOBILE
+   ============================================ */
+@media (max-width: 480px) {
+  .royalty-page,
+  .royalty-container {
+    padding: 12px !important;
+  }
+
+  .royalty-table {
+    display: block !important;
+    overflow-x: auto !important;
+    -webkit-overflow-scrolling: touch;
+    margin: 0 -12px;
+    padding: 0 12px;
+  }
+
+  .royalty-table table {
+    min-width: 500px;
+  }
+
+  .royalty-table th,
+  .royalty-table td {
+    padding: 8px 10px !important;
+    font-size: 0.8rem !important;
+    white-space: nowrap;
+  }
+
+  /* Royalty stats cards */
+  .royalty-stats {
+    grid-template-columns: 1fr !important;
+    gap: 12px !important;
+  }
+
+  .royalty-stat-card {
+    padding: 16px !important;
+    text-align: center;
+  }
+
+  .royalty-stat-value {
+    font-size: 1.5rem !important;
+  }
+
+  .royalty-stat-label {
+    font-size: 0.8rem !important;
+  }
+}
+
+/* ============================================
+   LIBRARY PAGE - MOBILE
+   ============================================ */
+@media (max-width: 480px) {
+  .library-grid,
+  .beats-grid,
+  .recordings-grid {
+    grid-template-columns: 1fr !important;
+    gap: 12px !important;
+  }
+
+  .library-item,
+  .beat-card,
+  .recording-card {
+    padding: 12px !important;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .library-item-thumb,
+  .beat-thumbnail {
+    width: 60px !important;
+    height: 60px !important;
+    flex-shrink: 0;
+  }
+
+  .library-item-info {
+    flex: 1;
+    min-width: 0;
+  }
+
+  .library-item-title {
+    font-size: 0.95rem !important;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  .library-item-meta {
+    font-size: 0.8rem !important;
+    color: #888;
+  }
+}
+
+/* ============================================
+   AI BEAT GENERATOR - MOBILE
+   ============================================ */
+@media (max-width: 480px) {
+  .beatlab-container,
+  .ai-beat-page {
+    padding: 12px !important;
+  }
+
+  .beat-prompt-input {
+    font-size: 16px !important; /* Prevent iOS zoom */
+    padding: 14px !important;
+    border-radius: 12px !important;
+  }
+
+  .beat-options-grid {
+    grid-template-columns: 1fr !important;
+    gap: 12px !important;
+  }
+
+  .beat-option-card {
+    padding: 12px !important;
+    text-align: center;
+  }
+
+  .beat-generate-btn {
+    width: 100% !important;
+    padding: 16px !important;
+    font-size: 1rem !important;
+    margin-top: 16px;
+  }
+}
+
+/* ============================================
+   LIVE ROOM - MOBILE
+   ============================================ */
+@media (max-width: 480px) {
+  .live-room-container {
+    padding: 12px !important;
+  }
+
+  .live-room-participants {
+    display: flex;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    gap: 8px;
+    padding-bottom: 8px;
+    margin-bottom: 12px;
+  }
+
+  .participant-avatar {
+    width: 48px !important;
+    height: 48px !important;
+    flex-shrink: 0;
+  }
+
+  .live-room-chat {
+    max-height: 200px;
+    overflow-y: auto;
+  }
+
+  .live-room-controls {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 12px;
+    padding-bottom: calc(12px + env(safe-area-inset-bottom));
+    background: linear-gradient(transparent, #0a0a0f 30%);
+    display: flex;
+    justify-content: center;
+    gap: 16px;
+  }
+}
+
+/* ============================================
+   MASTERING PAGE - MOBILE
+   ============================================ */
+@media (max-width: 480px) {
+  .mastering-container {
+    padding: 12px !important;
+  }
+
+  .mastering-presets {
+    display: flex;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    gap: 8px;
+    padding-bottom: 8px;
+  }
+
+  .preset-btn {
+    flex-shrink: 0;
+    padding: 10px 16px !important;
+    white-space: nowrap;
+  }
+
+  .mastering-controls {
+    grid-template-columns: 1fr !important;
+    gap: 12px !important;
+  }
+
+  .mastering-meter {
+    height: 40px !important;
+  }
+}
+
+/* ============================================
+   EXPORT PAGE - MOBILE
+   ============================================ */
+@media (max-width: 480px) {
+  .export-container,
+  .tv-export-page {
+    padding: 12px !important;
+  }
+
+  .export-options {
+    grid-template-columns: 1fr !important;
+    gap: 12px !important;
+  }
+
+  .export-option-card {
+    padding: 16px !important;
+  }
+
+  .export-format-select {
+    width: 100% !important;
+    font-size: 16px !important; /* Prevent iOS zoom */
+  }
+
+  .export-btn {
+    width: 100% !important;
+    padding: 16px !important;
+  }
+}
+
+/* ============================================
+   VOICE CLONING PAGE - MOBILE
+   ============================================ */
+@media (max-width: 480px) {
+  .voice-page {
+    padding: 12px !important;
+  }
+
+  .voice-samples-grid {
+    grid-template-columns: 1fr !important;
+  }
+
+  .voice-sample-card {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 12px !important;
+  }
+
+  .voice-waveform {
+    flex: 1;
+    height: 40px !important;
+  }
+
+  .voice-synthesize-btn {
+    width: 100% !important;
+  }
+}
+
+/* ============================================
+   FORM ELEMENTS IN STUDIO - iOS FIX
+   ============================================ */
+@media (max-width: 480px) {
+  .studio-input,
+  .studio-select,
+  .studio-textarea,
+  .studio-form input,
+  .studio-form select,
+  .studio-form textarea {
+    font-size: 16px !important; /* Prevents iOS zoom */
+    padding: 12px !important;
+    border-radius: 8px !important;
+    width: 100%;
+  }
+
+  .studio-form-group {
+    margin-bottom: 16px;
+  }
+
+  .studio-label {
+    font-size: 0.9rem;
+    margin-bottom: 6px;
+    display: block;
+  }
+}
+
+/* ============================================
+   STUDIO HUB NAVIGATION - MOBILE
+   ============================================ */
+@media (max-width: 480px) {
+  .studio-nav,
+  .studio-hub-nav {
+    display: flex;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    gap: 8px;
+    padding: 12px 0;
+    margin: 0 -12px;
+    padding-left: 12px;
+    padding-right: 12px;
+    scrollbar-width: none;
+  }
+
+  .studio-nav::-webkit-scrollbar {
+    display: none;
+  }
+
+  .studio-nav-item {
+    flex-shrink: 0;
+    padding: 8px 16px !important;
+    white-space: nowrap;
+    font-size: 0.85rem !important;
+    border-radius: 20px;
+  }
+}
+
+/* ============================================
+   SAFE AREA HANDLING FOR STUDIO
+   ============================================ */
+@supports (padding: env(safe-area-inset-bottom)) {
+  @media (max-width: 480px) {
+    .studio-page,
+    .recording-studio {
+      padding-bottom: calc(20px + env(safe-area-inset-bottom)) !important;
+    }
+
+    .studio-fixed-controls {
+      bottom: env(safe-area-inset-bottom);
+    }
+  }
+}
+
+
+
+
+
+
+
+
+
+

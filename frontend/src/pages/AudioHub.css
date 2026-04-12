@@ -1,0 +1,153 @@
+.ps-audio-page {
+  min-height: calc(100vh - 100px);
+  padding-bottom: 100px;
+  color: #f0ebe3;
+}
+
+.ps-audio-head {
+  padding: 8px 0 20px;
+}
+
+.ps-audio-head h1 {
+  margin: 0;
+  font-size: 1.75rem;
+  background: linear-gradient(135deg, #fff, #d4af37);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.ps-audio-layout {
+  display: grid;
+  grid-template-columns: 1fr minmax(280px, 340px);
+  gap: 24px;
+}
+
+@media (max-width: 900px) {
+  .ps-audio-layout {
+    grid-template-columns: 1fr;
+  }
+}
+
+.ps-audio-list {
+  background: #111;
+  border: 1px solid rgba(212, 175, 55, 0.15);
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.ps-audio-row {
+  display: flex;
+  gap: 14px;
+  align-items: center;
+  width: 100%;
+  padding: 14px 16px;
+  border: none;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  background: transparent;
+  color: inherit;
+  text-align: left;
+  cursor: pointer;
+}
+
+.ps-audio-row:hover,
+.ps-audio-row.active {
+  background: rgba(212, 175, 55, 0.08);
+}
+
+.ps-audio-row-play {
+  color: #d4af37;
+  font-size: 0.85rem;
+  width: 28px;
+}
+
+.ps-audio-track-name {
+  font-weight: 600;
+}
+
+.ps-audio-artist a {
+  color: #8a8070;
+  font-size: 0.85rem;
+  text-decoration: none;
+}
+
+.ps-audio-artist a:hover {
+  color: #d4af37;
+}
+
+.ps-audio-side {
+  background: #141414;
+  border: 1px solid rgba(212, 175, 55, 0.2);
+  border-radius: 12px;
+  padding: 20px;
+}
+
+.ps-audio-side h3 {
+  margin: 0 0 8px;
+  color: #d4af37;
+}
+
+.ps-audio-muted {
+  color: #7a7060;
+  font-size: 0.9rem;
+}
+
+.ps-audio-form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 16px;
+}
+
+.ps-audio-form input,
+.ps-audio-form textarea {
+  padding: 10px 12px;
+  border-radius: 8px;
+  border: 1px solid #333;
+  background: #0a0a0a;
+  color: #eee;
+}
+
+.ps-audio-form textarea {
+  min-height: 72px;
+}
+
+.ps-audio-form button {
+  padding: 12px;
+  border: none;
+  border-radius: 10px;
+  background: linear-gradient(135deg, #c9a227, #e6c04a);
+  font-weight: 700;
+  cursor: pointer;
+  color: #0a0a0a;
+}
+
+.ps-audio-bar {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 12px 20px;
+  background: linear-gradient(180deg, transparent, #0a0a0af2 30%);
+  border-top: 1px solid rgba(212, 175, 55, 0.25);
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  z-index: 50;
+}
+
+.ps-audio-el {
+  flex: 1;
+  max-width: 560px;
+  height: 40px;
+}
+
+.ps-audio-bar-meta {
+  display: flex;
+  flex-direction: column;
+  font-size: 0.85rem;
+}
+
+.ps-audio-bar-meta span {
+  color: #8a8070;
+}

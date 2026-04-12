@@ -1,0 +1,165 @@
+.ps-tvguide {
+  background: #050505;
+  border: 1px solid rgba(212, 175, 55, 0.25);
+  border-radius: 4px;
+  padding: 1rem 1.25rem;
+  color: #c8c2b6;
+  font-family: "Segoe UI", system-ui, sans-serif;
+}
+
+.ps-tvguide-head h2 {
+  margin: 0;
+  font-size: 1.1rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #f4e4a6;
+}
+
+.ps-tvguide-station {
+  display: block;
+  font-size: 0.8rem;
+  color: #8a8070;
+  margin-top: 0.25rem;
+}
+
+.ps-tvguide-live {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  margin-top: 0.75rem;
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  color: #ff4444;
+}
+
+.ps-tvguide-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #ff4444;
+  box-shadow: 0 0 8px red;
+}
+
+.ps-tvguide-now {
+  display: block;
+  margin-top: 0.75rem;
+  font-size: 0.8rem;
+}
+
+.ps-tvguide-now strong {
+  color: #e8e4dc;
+}
+
+.ps-tvguide-section {
+  margin-top: 1.25rem;
+}
+
+.ps-tvguide-section h3 {
+  font-size: 0.65rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: #c9a227;
+  margin: 0 0 0.65rem;
+}
+
+.ps-tvguide-rail {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.65rem;
+  color: #5c574d;
+  margin-bottom: 0.35rem;
+  padding: 0 0.25rem;
+}
+
+.ps-tvguide-track {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem;
+  min-height: 72px;
+  align-items: stretch;
+  padding: 0.5rem;
+  background: linear-gradient(90deg, #0a0a0a, #12100a);
+  border-radius: 4px;
+  border: 1px solid rgba(212, 175, 55, 0.12);
+}
+
+.ps-tvguide-empty {
+  font-size: 0.8rem;
+  color: #6a6358;
+  align-self: center;
+  width: 100%;
+  text-align: center;
+  padding: 1rem;
+}
+
+.ps-tvguide-block {
+  min-width: 72px;
+  background: linear-gradient(145deg, #1a1810, #0d0c08);
+  border: 1px solid rgba(201, 162, 39, 0.35);
+  border-radius: 3px;
+  padding: 0.4rem 0.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+}
+
+.ps-tvguide-block-time {
+  font-size: 0.6rem;
+  color: #c9a227;
+  font-family: ui-monospace, monospace;
+}
+
+.ps-tvguide-block-title {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: #f0ebe3;
+  line-height: 1.2;
+}
+
+.ps-tvguide-block-day {
+  font-size: 0.6rem;
+  color: #7a7265;
+}
+
+.ps-tvguide-lineup {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  max-height: 220px;
+  overflow-y: auto;
+}
+
+.ps-tvguide-lineup li {
+  display: grid;
+  grid-template-columns: 2rem 1fr auto;
+  gap: 0.5rem;
+  padding: 0.45rem 0.35rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+  font-size: 0.8rem;
+  align-items: center;
+}
+
+.ps-tvguide-lineup li.muted {
+  color: #5c574d;
+  grid-template-columns: 1fr;
+}
+
+.ps-tvguide-line {
+  font-family: ui-monospace, monospace;
+  color: #c9a227;
+}
+
+.ps-tvguide-line-title {
+  color: #ddd8ce;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.ps-tvguide-line-part {
+  font-size: 0.65rem;
+  color: #6a6358;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}

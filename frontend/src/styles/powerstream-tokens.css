@@ -1,0 +1,368 @@
+/* =====================================================
+   POWERSTREAM DESIGN TOKENS
+   Black + Gold Theme - Production Ready
+   ===================================================== */
+
+:root {
+  /* Core Brand Colors */
+  --ps-black: #000000;
+  --ps-black-soft: #0a0a0a;
+  --ps-black-panel: #0f0f10;
+  --ps-black-card: #141416;
+  --ps-black-elevated: #1a1a1f;
+  --ps-black-hover: #222228;
+  
+  /* Gold Spectrum */
+  --ps-gold: #e6b800;
+  --ps-gold-light: #ffda5c;
+  --ps-gold-soft: #ffd54f;
+  --ps-gold-dark: #c9a000;
+  --ps-gold-muted: rgba(230, 184, 0, 0.15);
+  --ps-gold-glow: rgba(230, 184, 0, 0.4);
+  
+  /* Text Colors */
+  --ps-text-primary: #ffffff;
+  --ps-text-secondary: #b3b3b3;
+  --ps-text-muted: #666666;
+  --ps-text-disabled: #444444;
+  
+  /* Semantic Colors */
+  --ps-success: #00c853;
+  --ps-error: #ff4757;
+  --ps-warning: #ffc107;
+  --ps-info: #2196f3;
+  --ps-live: #ff0000;
+  
+  /* Social Reactions */
+  --ps-like: #2d88ff;
+  --ps-love: #f33e58;
+  --ps-haha: #f7b928;
+  --ps-wow: #f7b928;
+  --ps-sad: #f7b928;
+  --ps-angry: #e9710f;
+  
+  /* Borders */
+  --ps-border-subtle: rgba(255, 255, 255, 0.06);
+  --ps-border-light: rgba(255, 255, 255, 0.1);
+  --ps-border-medium: rgba(255, 255, 255, 0.15);
+  --ps-border-gold: rgba(230, 184, 0, 0.3);
+  
+  /* Shadows */
+  --ps-shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.3);
+  --ps-shadow-md: 0 4px 16px rgba(0, 0, 0, 0.4);
+  --ps-shadow-lg: 0 8px 32px rgba(0, 0, 0, 0.5);
+  --ps-shadow-xl: 0 16px 48px rgba(0, 0, 0, 0.6);
+  --ps-shadow-gold: 0 4px 24px rgba(230, 184, 0, 0.2);
+  
+  /* Gradients */
+  --ps-gradient-gold: linear-gradient(135deg, var(--ps-gold) 0%, var(--ps-gold-light) 100%);
+  --ps-gradient-gold-text: linear-gradient(90deg, var(--ps-gold), var(--ps-gold-light));
+  --ps-gradient-card: linear-gradient(135deg, #1a1a1f 0%, #0f0f12 100%);
+  --ps-gradient-story: linear-gradient(135deg, var(--ps-gold), #ff8c00, var(--ps-gold-light));
+  --ps-gradient-overlay: linear-gradient(to top, rgba(0,0,0,0.8) 0%, transparent 50%);
+  
+  /* Typography */
+  --ps-font-primary: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  --ps-font-display: "SF Pro Display", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  
+  /* Font Sizes */
+  --ps-text-xs: 11px;
+  --ps-text-sm: 13px;
+  --ps-text-base: 14px;
+  --ps-text-md: 16px;
+  --ps-text-lg: 18px;
+  --ps-text-xl: 20px;
+  --ps-text-2xl: 24px;
+  --ps-text-3xl: 32px;
+  --ps-text-4xl: 40px;
+  
+  /* Font Weights */
+  --ps-font-normal: 400;
+  --ps-font-medium: 500;
+  --ps-font-semibold: 600;
+  --ps-font-bold: 700;
+  --ps-font-black: 900;
+  
+  /* Spacing */
+  --ps-space-xs: 4px;
+  --ps-space-sm: 8px;
+  --ps-space-md: 12px;
+  --ps-space-lg: 16px;
+  --ps-space-xl: 20px;
+  --ps-space-2xl: 24px;
+  --ps-space-3xl: 32px;
+  --ps-space-4xl: 48px;
+  
+  /* Border Radius */
+  --ps-radius-sm: 6px;
+  --ps-radius-md: 8px;
+  --ps-radius-lg: 12px;
+  --ps-radius-xl: 16px;
+  --ps-radius-2xl: 24px;
+  --ps-radius-full: 9999px;
+  
+  /* Transitions */
+  --ps-transition-fast: 0.1s ease;
+  --ps-transition-base: 0.2s ease;
+  --ps-transition-slow: 0.3s ease;
+  
+  /* Z-Index Scale */
+  --ps-z-base: 1;
+  --ps-z-dropdown: 100;
+  --ps-z-sticky: 200;
+  --ps-z-modal: 1000;
+  --ps-z-overlay: 1500;
+  --ps-z-toast: 2000;
+  
+  /* Layout */
+  --ps-header-height: 56px;
+  --ps-sidebar-width: 280px;
+  --ps-feed-max-width: 680px;
+  --ps-container-max: 1400px;
+}
+
+/* =====================================================
+   GLOBAL RESETS & BASE STYLES
+   ===================================================== */
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+body {
+  font-family: var(--ps-font-primary);
+  font-size: var(--ps-text-base);
+  line-height: 1.5;
+  color: var(--ps-text-primary);
+  background: var(--ps-black);
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+/* =====================================================
+   UTILITY CLASSES
+   ===================================================== */
+
+/* Text Utilities */
+.ps-text-gold {
+  background: var(--ps-gradient-gold-text);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.ps-text-muted {
+  color: var(--ps-text-muted);
+}
+
+.ps-text-secondary {
+  color: var(--ps-text-secondary);
+}
+
+/* Button Base */
+.ps-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--ps-space-sm);
+  padding: var(--ps-space-md) var(--ps-space-xl);
+  font-family: inherit;
+  font-size: var(--ps-text-base);
+  font-weight: var(--ps-font-semibold);
+  line-height: 1;
+  border: none;
+  border-radius: var(--ps-radius-full);
+  cursor: pointer;
+  transition: all var(--ps-transition-base);
+  text-decoration: none;
+}
+
+.ps-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.ps-btn--primary {
+  background: var(--ps-gold);
+  color: var(--ps-black);
+}
+
+.ps-btn--primary:hover:not(:disabled) {
+  background: var(--ps-gold-light);
+  transform: translateY(-1px);
+  box-shadow: var(--ps-shadow-gold);
+}
+
+.ps-btn--secondary {
+  background: var(--ps-black-elevated);
+  color: var(--ps-text-primary);
+  border: 1px solid var(--ps-border-light);
+}
+
+.ps-btn--secondary:hover:not(:disabled) {
+  background: var(--ps-black-hover);
+  border-color: var(--ps-border-medium);
+}
+
+.ps-btn--ghost {
+  background: transparent;
+  color: var(--ps-text-primary);
+}
+
+.ps-btn--ghost:hover:not(:disabled) {
+  background: var(--ps-black-elevated);
+}
+
+/* Card Base */
+.ps-card {
+  background: var(--ps-gradient-card);
+  border: 1px solid var(--ps-border-subtle);
+  border-radius: var(--ps-radius-lg);
+  overflow: hidden;
+}
+
+.ps-card--elevated {
+  box-shadow: var(--ps-shadow-md);
+}
+
+/* Avatar Base */
+.ps-avatar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+.ps-avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.ps-avatar--sm { width: 32px; height: 32px; }
+.ps-avatar--md { width: 40px; height: 40px; }
+.ps-avatar--lg { width: 48px; height: 48px; }
+.ps-avatar--xl { width: 64px; height: 64px; }
+
+.ps-avatar--gold {
+  background: var(--ps-gold);
+  color: var(--ps-black);
+  font-weight: var(--ps-font-bold);
+}
+
+.ps-avatar--story {
+  padding: 3px;
+  background: var(--ps-gradient-story);
+}
+
+.ps-avatar--story > * {
+  border: 3px solid var(--ps-black);
+  border-radius: 50%;
+}
+
+/* Spinner */
+.ps-spinner {
+  width: 32px;
+  height: 32px;
+  border: 3px solid var(--ps-border-light);
+  border-top-color: var(--ps-gold);
+  border-radius: 50%;
+  animation: ps-spin 0.8s linear infinite;
+}
+
+.ps-spinner--sm { width: 20px; height: 20px; border-width: 2px; }
+.ps-spinner--lg { width: 48px; height: 48px; border-width: 4px; }
+
+@keyframes ps-spin {
+  to { transform: rotate(360deg); }
+}
+
+/* Badge */
+.ps-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 18px;
+  height: 18px;
+  padding: 0 6px;
+  font-size: 11px;
+  font-weight: var(--ps-font-bold);
+  background: var(--ps-error);
+  color: white;
+  border-radius: var(--ps-radius-full);
+}
+
+.ps-badge--gold {
+  background: var(--ps-gold);
+  color: var(--ps-black);
+}
+
+/* Live Indicator */
+.ps-live-dot {
+  width: 8px;
+  height: 8px;
+  background: var(--ps-live);
+  border-radius: 50%;
+  animation: ps-pulse 1.5s ease-in-out infinite;
+}
+
+@keyframes ps-pulse {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.7; transform: scale(1.2); }
+}
+
+/* Scrollbar Styling */
+.ps-scrollbar::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+.ps-scrollbar::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.ps-scrollbar::-webkit-scrollbar-thumb {
+  background: var(--ps-border-medium);
+  border-radius: var(--ps-radius-full);
+}
+
+.ps-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: var(--ps-text-muted);
+}
+
+/* Hide Scrollbar */
+.ps-hide-scrollbar {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.ps-hide-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+/* =====================================================
+   RESPONSIVE BREAKPOINTS
+   ===================================================== */
+
+/* Mobile: default */
+/* Tablet: 768px+ */
+/* Desktop: 1024px+ */
+/* Large: 1280px+ */
+
+@media (max-width: 767px) {
+  :root {
+    --ps-header-height: 50px;
+    --ps-sidebar-width: 100%;
+  }
+}
+

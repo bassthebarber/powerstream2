@@ -1,0 +1,380 @@
+/**
+ * PowerStream — global ambience, glass, gold luxury utilities.
+ */
+@keyframes ps-bg-drift {
+  0% {
+    transform: scale(1) translate(0, 0);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.06) translate(1.5%, -0.8%);
+    opacity: 0.94;
+  }
+  100% {
+    transform: scale(1.03) translate(-0.8%, 0.8%);
+    opacity: 1;
+  }
+}
+
+@keyframes ps-glow-pulse {
+  0%,
+  100% {
+    opacity: 0.5;
+    filter: blur(52px);
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.78;
+    filter: blur(58px);
+    transform: scale(1.04);
+  }
+}
+
+@keyframes ps-fade-in-up {
+  from {
+    opacity: 0;
+    transform: translateY(14px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes ps-shake {
+  0%,
+  100% {
+    transform: translateX(0);
+  }
+  20% {
+    transform: translateX(-8px);
+  }
+  40% {
+    transform: translateX(8px);
+  }
+  60% {
+    transform: translateX(-6px);
+  }
+  80% {
+    transform: translateX(6px);
+  }
+}
+
+#root {
+  position: relative;
+  min-height: 100vh;
+}
+
+#root::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -3;
+  pointer-events: none;
+  background: var(--lux-bg, #0a0a0a);
+}
+
+#root::after {
+  content: "";
+  position: fixed;
+  inset: -20%;
+  z-index: -2;
+  pointer-events: none;
+  background:
+    radial-gradient(ellipse 52% 42% at 20% 28%, rgba(255, 215, 0, 0.07) 0%, transparent 55%),
+    radial-gradient(ellipse 48% 38% at 78% 72%, rgba(201, 162, 39, 0.06) 0%, transparent 52%),
+    radial-gradient(ellipse 42% 36% at 50% 100%, rgba(255, 215, 0, 0.04) 0%, transparent 48%);
+  animation: ps-bg-drift 28s ease-in-out infinite alternate;
+}
+
+main.ps-main {
+  animation: ps-fade-in-up 0.55s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.ps-glass {
+  background: rgba(8, 8, 10, 0.72);
+  backdrop-filter: blur(20px) saturate(150%);
+  -webkit-backdrop-filter: blur(20px) saturate(150%);
+  border: 1px solid rgba(255, 215, 0, 0.12);
+  box-shadow: 0 8px 40px rgba(0, 0, 0, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.05);
+}
+
+.ps-neon-border {
+  box-shadow:
+    0 0 0 1px rgba(255, 215, 0, 0.28),
+    0 0 28px rgba(255, 215, 0, 0.15),
+    0 0 56px rgba(201, 162, 39, 0.08);
+}
+
+.ps-neon-border--gold {
+  box-shadow:
+    0 0 0 1px rgba(255, 215, 0, 0.35),
+    0 0 32px rgba(255, 215, 0, 0.2),
+    0 0 64px rgba(201, 162, 39, 0.1);
+}
+
+.ps-shake {
+  animation: ps-shake 0.45s ease;
+}
+
+/* Login — gold frame */
+.ps-login-premium-wrap {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background: transparent;
+}
+
+.ps-login-premium-inner {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px 16px 48px;
+}
+
+.ps-login-premium-card {
+  position: relative;
+  border-radius: 20px;
+  padding: 2px;
+  background: linear-gradient(
+    145deg,
+    rgba(255, 236, 160, 0.55),
+    rgba(255, 215, 0, 0.5),
+    rgba(201, 162, 39, 0.45),
+    rgba(138, 112, 24, 0.5)
+  );
+  box-shadow: 0 0 48px rgba(255, 215, 0, 0.12), 0 28px 80px rgba(0, 0, 0, 0.65);
+}
+
+.ps-login-premium-card-inner {
+  border-radius: 18px;
+  background: rgba(8, 8, 10, 0.94);
+  backdrop-filter: blur(22px);
+  -webkit-backdrop-filter: blur(22px);
+  padding: 40px 32px;
+}
+
+.ps-login-input-wrap:focus-within {
+  box-shadow: 0 0 0 2px rgba(255, 215, 0, 0.28), 0 0 24px rgba(255, 215, 0, 0.1);
+  border-radius: 10px;
+  transition: box-shadow 0.35s ease;
+}
+
+.ps-login-btn-gradient {
+  background: linear-gradient(135deg, #fff4a8 0%, #ffd700 40%, #c9a227 100%);
+  background-size: 200% 200%;
+  transition: background-position 0.45s ease, transform 0.25s ease, box-shadow 0.35s ease;
+  box-shadow: 0 4px 28px rgba(255, 215, 0, 0.22);
+}
+
+.ps-login-btn-gradient:hover:not(:disabled) {
+  background-position: 100% 50%;
+  transform: translateY(-2px);
+  box-shadow: 0 10px 36px rgba(255, 215, 0, 0.28);
+}
+
+.ps-login-input-wrap input:focus {
+  border-color: rgba(255, 215, 0, 0.45);
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.ps-route-enter {
+  animation: ps-fade-in-up 0.45s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.ps-tv-stations-page {
+  position: relative;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 24px 20px 64px;
+}
+
+.ps-tv-stations-hero {
+  text-align: center;
+  margin-bottom: 2.5rem;
+  animation: ps-fade-in-up 0.65s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.ps-tv-stations-hero h1 {
+  font-size: clamp(2rem, 4.5vw, 2.85rem);
+  font-weight: 900;
+  letter-spacing: -0.03em;
+  margin: 0 0 12px;
+  background: var(--lux-gradient-gold-text, linear-gradient(110deg, #fff8dc, #ffd700, #c9a227));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  filter: drop-shadow(0 0 28px rgba(255, 215, 0, 0.12));
+}
+
+.ps-tv-stations-hero .ps-subtitle {
+  color: rgba(255, 255, 255, 0.48);
+  font-size: 1.05rem;
+  margin: 0;
+}
+
+.ps-tv-stations-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 28px;
+}
+
+@media (max-width: 520px) {
+  .ps-tv-stations-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Platform shell nav — black glass + gold */
+.ps-platform-shell {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  color: #fff;
+}
+
+.ps-platform-nav {
+  position: sticky;
+  top: 0;
+  z-index: 200;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 12px;
+  padding: 12px 20px;
+  background: linear-gradient(180deg, rgba(12, 12, 14, 0.92) 0%, rgba(6, 6, 8, 0.88) 100%);
+  backdrop-filter: blur(28px) saturate(165%);
+  -webkit-backdrop-filter: blur(28px) saturate(165%);
+  border-bottom: 1px solid rgba(255, 215, 0, 0.14);
+  box-shadow:
+    0 10px 48px rgba(0, 0, 0, 0.5),
+    0 0 56px rgba(255, 215, 0, 0.05),
+    inset 0 1px 0 rgba(255, 255, 255, 0.05);
+}
+
+.ps-platform-nav__brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+  color: #ffd700;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  position: relative;
+  transition: text-shadow 0.35s ease, color 0.25s ease;
+}
+
+.ps-platform-nav__brand:hover {
+  color: #fff8c4;
+  text-shadow: 0 0 24px rgba(255, 215, 0, 0.35);
+}
+
+.ps-platform-nav__brand img {
+  width: 34px;
+  height: 34px;
+  object-fit: contain;
+  filter: drop-shadow(0 0 12px rgba(255, 215, 0, 0.4));
+}
+
+.ps-platform-nav__links {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 4px;
+}
+
+.ps-platform-nav__link {
+  position: relative;
+  padding: 10px 16px;
+  border-radius: 999px;
+  text-decoration: none;
+  color: rgba(255, 255, 255, 0.78);
+  font-weight: 600;
+  font-size: 14px;
+  transition: color 0.3s ease, background 0.3s ease, box-shadow 0.35s ease;
+}
+
+.ps-platform-nav__link::after {
+  content: "";
+  position: absolute;
+  left: 18px;
+  right: 18px;
+  bottom: 6px;
+  height: 2px;
+  border-radius: 2px;
+  background: linear-gradient(90deg, transparent, rgba(255, 248, 220, 0.45), #ffd700, #c9a227, transparent);
+  transform: scaleX(0);
+  transform-origin: center;
+  transition: transform 0.45s cubic-bezier(0.22, 1, 0.36, 1);
+  opacity: 0.95;
+  box-shadow: 0 0 10px rgba(255, 215, 0, 0.3);
+}
+
+.ps-platform-nav__link:hover {
+  color: #ffd700;
+  background: rgba(255, 215, 0, 0.07);
+  box-shadow: 0 0 32px rgba(255, 215, 0, 0.12);
+}
+
+.ps-platform-nav__link:hover::after {
+  transform: scaleX(1);
+}
+
+.ps-platform-nav__link--accent {
+  color: #0a0a0a;
+  background: var(--lux-gradient-gold, linear-gradient(135deg, #fff4a8, #ffd700, #c9a227));
+  box-shadow: 0 0 24px rgba(255, 215, 0, 0.2);
+}
+
+.ps-platform-nav__link--accent::after {
+  display: none;
+}
+
+.ps-platform-nav__link--accent:hover {
+  color: #0a0a0a;
+  box-shadow: 0 0 36px rgba(255, 215, 0, 0.32);
+  transform: translateY(-1px);
+}
+
+/* Active tab — gold underline (NavLink) */
+.ps-platform-nav__link--active:not(.ps-platform-nav__link--accent) {
+  color: #ffd700 !important;
+  background: rgba(255, 215, 0, 0.08);
+  box-shadow: 0 0 26px rgba(255, 215, 0, 0.1);
+}
+
+.ps-platform-nav__link--active:not(.ps-platform-nav__link--accent)::after {
+  transform: scaleX(1);
+  animation: ps-platform-nav-active-pulse 2.6s ease-in-out infinite;
+}
+
+@keyframes ps-platform-nav-active-pulse {
+  0%,
+  100% {
+    opacity: 0.85;
+    filter: brightness(1);
+  }
+  50% {
+    opacity: 1;
+    filter: brightness(1.12);
+  }
+}
+
+.ps-platform-body {
+  flex: 1;
+  padding: 20px 20px 48px;
+}
+
+.ps-platform-body--flush {
+  padding-top: 0;
+}

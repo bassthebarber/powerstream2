@@ -1,0 +1,614 @@
+/* frontend/src/styles/tv-civic.css */
+/* Civic Connect TV - Clean News & Community Style */
+
+.tv-station--civic {
+  --station-primary: #1e88e5;
+  --station-secondary: #ffffff;
+  --station-accent: #43a047;
+  --station-bg: #0a1929;
+}
+
+/* ============================================
+   NEWS HERO
+   ============================================ */
+.civic-hero {
+  position: relative;
+  height: 50vh;
+  min-height: 400px;
+  background: linear-gradient(135deg, #0a1929 0%, #1a3a5c 100%);
+  overflow: hidden;
+}
+
+.civic-hero-pattern {
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(circle at 20% 80%, rgba(30, 136, 229, 0.1) 0%, transparent 40%),
+    radial-gradient(circle at 80% 20%, rgba(67, 160, 71, 0.1) 0%, transparent 40%);
+}
+
+.civic-hero-grid {
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(30, 136, 229, 0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(30, 136, 229, 0.05) 1px, transparent 1px);
+  background-size: 40px 40px;
+}
+
+.civic-hero-content {
+  position: relative;
+  z-index: 2;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  padding: 3rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.civic-hero-left {
+  flex: 1;
+}
+
+.civic-hero-logo {
+  height: 60px;
+  width: auto;
+  margin-bottom: 1.5rem;
+}
+
+.civic-hero-title {
+  font-size: 3rem;
+  font-weight: 700;
+  color: #ffffff;
+  margin: 0 0 0.5rem;
+  line-height: 1.1;
+}
+
+.civic-hero-subtitle {
+  font-size: 1.25rem;
+  color: #1e88e5;
+  margin: 0 0 1rem;
+}
+
+.civic-hero-description {
+  font-size: 1rem;
+  color: #8ba4c0;
+  line-height: 1.6;
+  margin: 0 0 2rem;
+  max-width: 500px;
+}
+
+.civic-hero-stats {
+  display: flex;
+  gap: 2rem;
+}
+
+.civic-stat {
+  text-align: center;
+}
+
+.civic-stat-value {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #1e88e5;
+}
+
+.civic-stat-label {
+  font-size: 0.75rem;
+  color: #8ba4c0;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+.civic-hero-live {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  background: rgba(0, 0, 0, 0.3);
+  padding: 1.5rem;
+  border-radius: 12px;
+  border: 1px solid rgba(30, 136, 229, 0.2);
+  min-width: 300px;
+}
+
+.civic-hero-live-badge {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.875rem;
+  font-weight: 700;
+  color: #ff4757;
+  text-transform: uppercase;
+}
+
+.civic-hero-live-title {
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: #ffffff;
+  margin: 0;
+}
+
+.civic-hero-live-btn {
+  padding: 0.75rem 1.5rem;
+  background: #1e88e5;
+  color: #ffffff;
+  border: none;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.civic-hero-live-btn:hover {
+  background: #1976d2;
+  transform: translateY(-2px);
+}
+
+/* ============================================
+   BREAKING NEWS TICKER
+   ============================================ */
+.civic-ticker {
+  display: flex;
+  background: #ff4757;
+  color: #ffffff;
+}
+
+.civic-ticker-label {
+  padding: 0.75rem 1.5rem;
+  background: rgba(0, 0, 0, 0.2);
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  white-space: nowrap;
+}
+
+.civic-ticker-content {
+  flex: 1;
+  overflow: hidden;
+  padding: 0.75rem 1rem;
+}
+
+.civic-ticker-text {
+  display: flex;
+  animation: ticker 40s linear infinite;
+  white-space: nowrap;
+}
+
+.civic-ticker-item {
+  padding: 0 2rem;
+  font-size: 0.875rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.civic-ticker-dot {
+  width: 6px;
+  height: 6px;
+  background: #ffffff;
+  border-radius: 50%;
+}
+
+/* ============================================
+   CONTENT SECTIONS
+   ============================================ */
+.civic-section {
+  padding: 3rem 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.civic-section--alt {
+  background: rgba(30, 136, 229, 0.03);
+}
+
+.civic-section-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 2rem;
+  padding-bottom: 1rem;
+  border-bottom: 2px solid rgba(30, 136, 229, 0.2);
+}
+
+.civic-section-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #ffffff;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.civic-section-title::before {
+  content: '';
+  width: 4px;
+  height: 24px;
+  background: #1e88e5;
+  border-radius: 2px;
+}
+
+/* ============================================
+   NEWS CARDS
+   ============================================ */
+.civic-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+  gap: 1.5rem;
+}
+
+.civic-card {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 12px;
+  overflow: hidden;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.civic-card:hover {
+  transform: translateY(-4px);
+  border-color: #1e88e5;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+.civic-card-media {
+  position: relative;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+}
+
+.civic-card-media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s;
+}
+
+.civic-card:hover .civic-card-media img {
+  transform: scale(1.05);
+}
+
+.civic-card-category {
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  padding: 0.35rem 0.75rem;
+  background: #1e88e5;
+  color: #ffffff;
+  font-size: 0.625rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  border-radius: 4px;
+}
+
+.civic-card-category--politics {
+  background: #43a047;
+}
+
+.civic-card-category--community {
+  background: #ff9800;
+}
+
+.civic-card-category--education {
+  background: #9c27b0;
+}
+
+.civic-card-live {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.35rem 0.75rem;
+  background: #ff4757;
+  border-radius: 4px;
+  font-size: 0.625rem;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.civic-card-duration {
+  position: absolute;
+  bottom: 0.75rem;
+  right: 0.75rem;
+  padding: 0.25rem 0.5rem;
+  background: rgba(0, 0, 0, 0.8);
+  border-radius: 4px;
+  font-size: 0.75rem;
+}
+
+.civic-card-info {
+  padding: 1.25rem;
+}
+
+.civic-card-title {
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: #ffffff;
+  margin: 0 0 0.5rem;
+  line-height: 1.3;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.civic-card-excerpt {
+  font-size: 0.875rem;
+  color: #8ba4c0;
+  margin: 0 0 1rem;
+  line-height: 1.5;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.civic-card-meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.75rem;
+  color: #607d8b;
+}
+
+.civic-card-author {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.civic-card-avatar {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+/* ============================================
+   SCHEDULE - NEWS FORMAT
+   ============================================ */
+.civic-schedule {
+  background: rgba(255, 255, 255, 0.02);
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.civic-schedule-header {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 1rem 1.5rem;
+  background: rgba(30, 136, 229, 0.1);
+  border-bottom: 1px solid rgba(30, 136, 229, 0.2);
+}
+
+.civic-schedule-header h4 {
+  font-size: 1rem;
+  font-weight: 600;
+  margin: 0;
+  color: #1e88e5;
+}
+
+.civic-schedule-list {
+  max-height: 400px;
+  overflow-y: auto;
+}
+
+.civic-schedule-item {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem 1.5rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  transition: all 0.2s;
+}
+
+.civic-schedule-item:hover {
+  background: rgba(30, 136, 229, 0.05);
+}
+
+.civic-schedule-item--now {
+  background: rgba(30, 136, 229, 0.1);
+  border-left: 3px solid #1e88e5;
+}
+
+.civic-schedule-time {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: #1e88e5;
+  min-width: 80px;
+}
+
+.civic-schedule-show {
+  flex: 1;
+}
+
+.civic-schedule-show-title {
+  font-size: 0.9375rem;
+  font-weight: 500;
+  margin: 0 0 0.25rem;
+}
+
+.civic-schedule-show-host {
+  font-size: 0.75rem;
+  color: #8ba4c0;
+  margin: 0;
+}
+
+.civic-schedule-now-badge {
+  padding: 0.25rem 0.5rem;
+  background: #43a047;
+  color: #ffffff;
+  font-size: 0.625rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  border-radius: 4px;
+}
+
+/* ============================================
+   CATEGORY TABS
+   ============================================ */
+.civic-tabs {
+  display: flex;
+  gap: 0.5rem;
+  padding: 1rem 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  overflow-x: auto;
+  margin-bottom: 2rem;
+}
+
+.civic-tab {
+  padding: 0.75rem 1.5rem;
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+  color: #8ba4c0;
+  font-size: 0.875rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s;
+  white-space: nowrap;
+}
+
+.civic-tab:hover {
+  border-color: #1e88e5;
+  color: #ffffff;
+}
+
+.civic-tab--active {
+  background: #1e88e5;
+  border-color: #1e88e5;
+  color: #ffffff;
+}
+
+/* ============================================
+   COMMUNITY PANEL
+   ============================================ */
+.civic-community {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 1.5rem;
+}
+
+.civic-community-card {
+  padding: 1.5rem;
+  background: rgba(67, 160, 71, 0.05);
+  border: 1px solid rgba(67, 160, 71, 0.2);
+  border-radius: 12px;
+  text-align: center;
+  transition: all 0.3s;
+}
+
+.civic-community-card:hover {
+  transform: translateY(-4px);
+  border-color: #43a047;
+}
+
+.civic-community-icon {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.civic-community-title {
+  font-size: 1.125rem;
+  font-weight: 600;
+  margin: 0 0 0.5rem;
+}
+
+.civic-community-description {
+  font-size: 0.875rem;
+  color: #8ba4c0;
+  margin: 0;
+}
+
+/* ============================================
+   UPLOAD PANEL - OFFICIAL STYLE
+   ============================================ */
+.civic-upload-panel {
+  background: linear-gradient(135deg, #0a1929, #1a3a5c);
+  border: 1px solid rgba(30, 136, 229, 0.3);
+}
+
+.civic-upload-header {
+  border-bottom: 1px solid rgba(30, 136, 229, 0.2);
+}
+
+.civic-upload-header h3 {
+  color: #1e88e5;
+}
+
+.civic-upload-btn {
+  background: #1e88e5;
+}
+
+.civic-upload-btn:hover {
+  background: #1976d2;
+}
+
+/* ============================================
+   RESPONSIVE
+   ============================================ */
+@media (max-width: 1024px) {
+  .civic-hero-content {
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+  }
+
+  .civic-hero-description {
+    max-width: 100%;
+  }
+
+  .civic-hero-stats {
+    justify-content: center;
+    margin-bottom: 2rem;
+  }
+
+  .civic-hero-live {
+    width: 100%;
+    max-width: 400px;
+  }
+}
+
+@media (max-width: 768px) {
+  .civic-hero {
+    height: auto;
+    min-height: unset;
+  }
+
+  .civic-hero-content {
+    padding: 2rem;
+  }
+
+  .civic-hero-title {
+    font-size: 2rem;
+  }
+
+  .civic-section {
+    padding: 2rem 1rem;
+  }
+
+  .civic-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .civic-community {
+    grid-template-columns: 1fr;
+  }
+
+  .civic-ticker {
+    flex-direction: column;
+  }
+
+  .civic-ticker-label {
+    text-align: center;
+  }
+}
+

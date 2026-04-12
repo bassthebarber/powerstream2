@@ -1,0 +1,345 @@
+/* frontend/src/styles/tv-music.css */
+/* Southern Power Music TV - 24/7 Music Video Channel */
+
+.tv-station--music {
+  --station-primary: #e6b800;
+  --station-secondary: #ff1744;
+  --station-accent: #00e676;
+  --station-bg: #0a0a0a;
+}
+
+/* HERO */
+.music-hero {
+  position: relative;
+  height: 65vh;
+  min-height: 450px;
+  overflow: hidden;
+  background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 100%);
+}
+
+.music-hero-visualizer {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 200px;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  gap: 4px;
+  opacity: 0.4;
+}
+
+.music-hero-bar {
+  width: 8px;
+  background: linear-gradient(to top, #e6b800, #ff1744);
+  border-radius: 4px 4px 0 0;
+  animation: bar-bounce var(--duration, 0.8s) ease-in-out infinite;
+}
+
+@keyframes bar-bounce {
+  0%, 100% { height: 20px; }
+  50% { height: var(--height, 100px); }
+}
+
+.music-hero-content {
+  position: relative;
+  z-index: 2;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 3rem;
+  max-width: 700px;
+}
+
+.music-hero-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 1rem;
+  background: #ff1744;
+  color: #fff;
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  border-radius: 50px;
+  width: fit-content;
+  margin-bottom: 1rem;
+}
+
+.music-hero-logo {
+  height: 60px;
+  margin-bottom: 1.5rem;
+}
+
+.music-hero-title {
+  font-size: 3rem;
+  font-weight: 900;
+  margin: 0 0 0.5rem;
+  background: linear-gradient(135deg, #e6b800, #ff1744);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.music-hero-subtitle {
+  font-size: 1.25rem;
+  color: #888;
+  margin: 0 0 2rem;
+}
+
+.music-hero-actions {
+  display: flex;
+  gap: 1rem;
+}
+
+.music-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 1rem 2rem;
+  font-weight: 700;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.music-btn--primary {
+  background: linear-gradient(135deg, #e6b800, #ff1744);
+  color: #0a0a0a;
+}
+
+.music-btn--primary:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 30px rgba(230, 184, 0, 0.4);
+}
+
+.music-btn--secondary {
+  background: rgba(255, 255, 255, 0.1);
+  color: #fff;
+  border: 2px solid #e6b800;
+}
+
+/* NOW PLAYING */
+.music-now-playing {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  padding: 1.5rem 2rem;
+  background: linear-gradient(90deg, rgba(230, 184, 0, 0.1), rgba(255, 23, 68, 0.1));
+  border-top: 1px solid rgba(230, 184, 0, 0.2);
+  border-bottom: 1px solid rgba(230, 184, 0, 0.2);
+}
+
+.music-now-playing-label {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: #e6b800;
+}
+
+.music-now-playing-track {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.music-now-playing-thumb {
+  width: 50px;
+  height: 50px;
+  border-radius: 8px;
+  object-fit: cover;
+}
+
+.music-now-playing-info h4 {
+  margin: 0;
+  font-size: 1rem;
+}
+
+.music-now-playing-info p {
+  margin: 0;
+  font-size: 0.875rem;
+  color: #888;
+}
+
+/* GENRE FILTER */
+.music-genres {
+  display: flex;
+  gap: 0.5rem;
+  padding: 1.5rem 2rem;
+  overflow-x: auto;
+}
+
+.music-genre {
+  padding: 0.625rem 1.25rem;
+  border-radius: 50px;
+  font-size: 0.875rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+  white-space: nowrap;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: #888;
+}
+
+.music-genre:hover,
+.music-genre--active {
+  background: var(--genre-color, #e6b800);
+  border-color: var(--genre-color, #e6b800);
+  color: #0a0a0a;
+}
+
+/* VIDEO GRID */
+.music-section {
+  padding: 3rem 2rem;
+}
+
+.music-section-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 2rem;
+}
+
+.music-section-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.music-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 1.5rem;
+}
+
+.music-video-card {
+  position: relative;
+  aspect-ratio: 16 / 9;
+  border-radius: 12px;
+  overflow: hidden;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.music-video-card:hover {
+  transform: scale(1.03);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4);
+}
+
+.music-video-thumb {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.music-video-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.9), transparent 50%);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 1rem;
+}
+
+.music-video-genre {
+  position: absolute;
+  top: 0.75rem;
+  left: 0.75rem;
+  padding: 0.25rem 0.5rem;
+  border-radius: 4px;
+  font-size: 0.625rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  background: var(--genre-color, #e6b800);
+  color: #0a0a0a;
+}
+
+.music-video-title {
+  font-size: 1rem;
+  font-weight: 600;
+  margin: 0 0 0.25rem;
+}
+
+.music-video-artist {
+  font-size: 0.875rem;
+  color: #e6b800;
+  margin: 0;
+}
+
+.music-video-play {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 60px;
+  height: 60px;
+  background: #e6b800;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  color: #0a0a0a;
+  opacity: 0;
+  transition: all 0.3s;
+}
+
+.music-video-card:hover .music-video-play {
+  opacity: 1;
+}
+
+/* SCHEDULE */
+.music-schedule {
+  background: rgba(230, 184, 0, 0.03);
+  padding: 3rem 2rem;
+}
+
+.music-schedule-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 1rem;
+}
+
+.music-schedule-slot {
+  padding: 1rem;
+  background: rgba(255, 255, 255, 0.03);
+  border-radius: 8px;
+  text-align: center;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.music-schedule-slot--now {
+  background: rgba(230, 184, 0, 0.1);
+  border-color: #e6b800;
+}
+
+.music-schedule-time {
+  font-size: 0.75rem;
+  color: #e6b800;
+  margin-bottom: 0.5rem;
+}
+
+.music-schedule-show {
+  font-weight: 600;
+  margin: 0;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .music-hero-title { font-size: 2rem; }
+  .music-hero-actions { flex-direction: column; }
+  .music-now-playing { flex-direction: column; gap: 1rem; }
+  .music-grid { grid-template-columns: 1fr; }
+}
+

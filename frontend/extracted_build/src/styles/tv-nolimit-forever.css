@@ -1,0 +1,653 @@
+/* frontend/src/styles/tv-nolimit-forever.css */
+/* No Limit Forever TV - Premium Documentary/Film Experience */
+
+.tv-station--nolimit-forever {
+  --station-primary: #d4af37;
+  --station-secondary: #1a1a1a;
+  --station-accent: #ffd700;
+  --station-bg: #0d0d0d;
+}
+
+/* ============================================
+   CINEMATIC HERO
+   ============================================ */
+.nlf-hero {
+  position: relative;
+  height: 90vh;
+  min-height: 600px;
+  overflow: hidden;
+  background: #0d0d0d;
+}
+
+.nlf-hero-media {
+  position: absolute;
+  inset: 0;
+}
+
+.nlf-hero-video,
+.nlf-hero-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.nlf-hero-overlay {
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(
+      to right,
+      #0d0d0d 0%,
+      rgba(13, 13, 13, 0.8) 25%,
+      transparent 60%
+    ),
+    linear-gradient(
+      to top,
+      #0d0d0d 0%,
+      rgba(13, 13, 13, 0.5) 30%,
+      transparent 60%
+    );
+}
+
+.nlf-hero-vignette {
+  position: absolute;
+  inset: 0;
+  box-shadow: inset 0 0 200px 80px rgba(0, 0, 0, 0.9);
+  pointer-events: none;
+}
+
+.nlf-hero-content {
+  position: relative;
+  z-index: 2;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 4rem;
+  max-width: 600px;
+}
+
+.nlf-hero-masterp-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 1rem;
+  background: linear-gradient(135deg, #d4af37, #ffd700);
+  color: #0d0d0d;
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  border-radius: 2px;
+  margin-bottom: 1rem;
+}
+
+.nlf-hero-logo {
+  height: 60px;
+  width: auto;
+  margin-bottom: 1.5rem;
+  filter: drop-shadow(0 4px 20px rgba(212, 175, 55, 0.4));
+}
+
+.nlf-hero-title {
+  font-size: 3.5rem;
+  font-weight: 300;
+  letter-spacing: 0.02em;
+  line-height: 1.1;
+  margin: 0 0 1rem;
+  color: #ffffff;
+  font-family: 'Georgia', serif;
+}
+
+.nlf-hero-description {
+  font-size: 1.125rem;
+  color: #a0a0a0;
+  line-height: 1.6;
+  margin: 0 0 1.5rem;
+}
+
+.nlf-hero-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  font-size: 0.875rem;
+  color: #808080;
+  margin-bottom: 2rem;
+}
+
+.nlf-hero-meta span {
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+}
+
+.nlf-hero-meta .gold {
+  color: #d4af37;
+}
+
+.nlf-hero-actions {
+  display: flex;
+  gap: 1rem;
+}
+
+.nlf-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 1rem 2rem;
+  font-size: 0.9375rem;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.nlf-btn--primary {
+  background: linear-gradient(135deg, #d4af37 0%, #ffd700 100%);
+  color: #0d0d0d;
+}
+
+.nlf-btn--primary:hover {
+  transform: translateY(-3px);
+  box-shadow:
+    0 10px 30px rgba(212, 175, 55, 0.4),
+    0 0 40px rgba(212, 175, 55, 0.2);
+}
+
+.nlf-btn--secondary {
+  background: rgba(255, 255, 255, 0.1);
+  color: #ffffff;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.nlf-btn--secondary:hover {
+  background: rgba(255, 255, 255, 0.15);
+  border-color: #d4af37;
+}
+
+/* ============================================
+   COLLECTION ROWS (Netflix-style)
+   ============================================ */
+.nlf-collections {
+  padding: 2rem 0 4rem;
+  background: linear-gradient(to bottom, transparent, rgba(212, 175, 55, 0.02));
+}
+
+.nlf-collection {
+  padding: 2rem 3rem;
+  margin-bottom: 1rem;
+}
+
+.nlf-collection-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1.25rem;
+}
+
+.nlf-collection-title {
+  font-size: 1.375rem;
+  font-weight: 500;
+  color: #ffffff;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.nlf-collection-title span {
+  font-size: 1.25rem;
+}
+
+.nlf-collection-see-all {
+  color: #d4af37;
+  font-size: 0.875rem;
+  text-decoration: none;
+  cursor: pointer;
+  transition: color 0.2s;
+}
+
+.nlf-collection-see-all:hover {
+  color: #ffd700;
+}
+
+.nlf-collection-grid {
+  display: flex;
+  gap: 1rem;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  padding-bottom: 1rem;
+}
+
+.nlf-collection-grid::-webkit-scrollbar {
+  display: none;
+}
+
+/* ============================================
+   FILM CARDS - Cinematic Style
+   ============================================ */
+.nlf-film-card {
+  flex: 0 0 220px;
+  position: relative;
+  aspect-ratio: 2 / 3;
+  border-radius: 4px;
+  overflow: hidden;
+  cursor: pointer;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.nlf-film-card:hover {
+  transform: scale(1.08);
+  z-index: 10;
+  box-shadow:
+    0 20px 50px rgba(0, 0, 0, 0.8),
+    0 0 40px rgba(212, 175, 55, 0.2);
+}
+
+.nlf-film-card-poster {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: filter 0.3s;
+}
+
+.nlf-film-card:hover .nlf-film-card-poster {
+  filter: brightness(0.4);
+}
+
+.nlf-film-card-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to top,
+    rgba(0, 0, 0, 0.95) 0%,
+    rgba(0, 0, 0, 0.3) 40%,
+    transparent 100%
+  );
+  opacity: 0;
+  transition: opacity 0.3s;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 1rem;
+}
+
+.nlf-film-card:hover .nlf-film-card-overlay {
+  opacity: 1;
+}
+
+.nlf-film-card-title {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #ffffff;
+  margin: 0 0 0.25rem;
+  line-height: 1.2;
+}
+
+.nlf-film-card-year {
+  font-size: 0.75rem;
+  color: #d4af37;
+  margin: 0 0 0.5rem;
+}
+
+.nlf-film-card-duration {
+  font-size: 0.75rem;
+  color: #808080;
+  margin: 0 0 1rem;
+}
+
+.nlf-film-card-actions {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.nlf-film-card-btn {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.35rem;
+  padding: 0.5rem;
+  background: #d4af37;
+  color: #0d0d0d;
+  font-size: 0.75rem;
+  font-weight: 600;
+  border: none;
+  border-radius: 2px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.nlf-film-card-btn:hover {
+  background: #ffd700;
+}
+
+.nlf-film-card-btn--secondary {
+  background: rgba(255, 255, 255, 0.15);
+  color: #ffffff;
+}
+
+.nlf-film-card-btn--secondary:hover {
+  background: rgba(255, 255, 255, 0.25);
+}
+
+/* Badges */
+.nlf-film-badge {
+  position: absolute;
+  top: 0.75rem;
+  left: 0.75rem;
+  padding: 0.25rem 0.5rem;
+  font-size: 0.625rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  border-radius: 2px;
+  z-index: 2;
+}
+
+.nlf-film-badge--premiere {
+  background: linear-gradient(135deg, #ff4757, #ff6b81);
+  color: #ffffff;
+}
+
+.nlf-film-badge--exclusive {
+  background: linear-gradient(135deg, #d4af37, #ffd700);
+  color: #0d0d0d;
+}
+
+.nlf-film-badge--hd {
+  background: rgba(255, 255, 255, 0.2);
+  color: #ffffff;
+}
+
+/* ============================================
+   FEATURED ROW - Larger Cards
+   ============================================ */
+.nlf-featured-grid {
+  display: flex;
+  gap: 1.5rem;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  scrollbar-width: none;
+  padding-bottom: 1rem;
+}
+
+.nlf-featured-card {
+  flex: 0 0 400px;
+  position: relative;
+  aspect-ratio: 16 / 9;
+  border-radius: 6px;
+  overflow: hidden;
+  cursor: pointer;
+  transition: all 0.4s;
+}
+
+.nlf-featured-card:hover {
+  transform: scale(1.03);
+  box-shadow:
+    0 30px 60px rgba(0, 0, 0, 0.7),
+    0 0 50px rgba(212, 175, 55, 0.15);
+}
+
+.nlf-featured-card-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.nlf-featured-card-overlay {
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(
+      to right,
+      rgba(0, 0, 0, 0.9) 0%,
+      rgba(0, 0, 0, 0.4) 50%,
+      transparent 100%
+    ),
+    linear-gradient(
+      to top,
+      rgba(0, 0, 0, 0.8) 0%,
+      transparent 40%
+    );
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 1.5rem;
+}
+
+.nlf-featured-card-collection {
+  font-size: 0.75rem;
+  color: #d4af37;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin-bottom: 0.5rem;
+}
+
+.nlf-featured-card-title {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #ffffff;
+  margin: 0 0 0.5rem;
+}
+
+.nlf-featured-card-description {
+  font-size: 0.875rem;
+  color: #a0a0a0;
+  margin: 0;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+/* ============================================
+   UPLOAD PANEL - Film Quality
+   ============================================ */
+.nlf-upload-panel {
+  background: linear-gradient(135deg, #1a1a1a 0%, #0d0d0d 100%);
+  border: 1px solid rgba(212, 175, 55, 0.2);
+}
+
+.nlf-upload-header {
+  border-bottom: 1px solid rgba(212, 175, 55, 0.1);
+}
+
+.nlf-upload-header h3 {
+  color: #d4af37;
+}
+
+.nlf-upload-dropzone {
+  border: 2px dashed rgba(212, 175, 55, 0.3);
+}
+
+.nlf-upload-dropzone:hover {
+  border-color: #d4af37;
+  background: rgba(212, 175, 55, 0.05);
+}
+
+.nlf-upload-btn {
+  background: linear-gradient(135deg, #d4af37, #ffd700);
+  color: #0d0d0d;
+}
+
+/* ============================================
+   CATEGORIES NAV
+   ============================================ */
+.nlf-categories {
+  display: flex;
+  gap: 0.5rem;
+  padding: 1.5rem 3rem;
+  background: rgba(0, 0, 0, 0.5);
+  border-bottom: 1px solid rgba(212, 175, 55, 0.1);
+  overflow-x: auto;
+}
+
+.nlf-category {
+  padding: 0.75rem 1.5rem;
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: #808080;
+  font-size: 0.875rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s;
+  white-space: nowrap;
+  border-radius: 4px;
+}
+
+.nlf-category:hover {
+  border-color: rgba(212, 175, 55, 0.5);
+  color: #ffffff;
+}
+
+.nlf-category--active {
+  background: #d4af37;
+  border-color: #d4af37;
+  color: #0d0d0d;
+}
+
+/* ============================================
+   MASTER P SIGNATURE SECTION
+   ============================================ */
+.nlf-masterp-section {
+  padding: 4rem 3rem;
+  background: linear-gradient(135deg, rgba(212, 175, 55, 0.05), transparent);
+  border-top: 1px solid rgba(212, 175, 55, 0.1);
+  border-bottom: 1px solid rgba(212, 175, 55, 0.1);
+}
+
+.nlf-masterp-header {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  margin-bottom: 2rem;
+}
+
+.nlf-masterp-avatar {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  border: 3px solid #d4af37;
+  object-fit: cover;
+}
+
+.nlf-masterp-info h2 {
+  font-size: 2rem;
+  font-weight: 300;
+  margin: 0 0 0.5rem;
+  color: #ffffff;
+  font-family: 'Georgia', serif;
+}
+
+.nlf-masterp-info p {
+  font-size: 1rem;
+  color: #d4af37;
+  margin: 0;
+}
+
+/* ============================================
+   MODAL - CINEMATIC
+   ============================================ */
+.nlf-modal {
+  background: linear-gradient(135deg, #1a1a1a, #0d0d0d);
+  border: 1px solid rgba(212, 175, 55, 0.2);
+}
+
+.nlf-modal-media {
+  position: relative;
+}
+
+.nlf-modal-media::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  box-shadow: inset 0 -100px 100px -50px #1a1a1a;
+  pointer-events: none;
+}
+
+/* ============================================
+   RESPONSIVE
+   ============================================ */
+@media (max-width: 1024px) {
+  .nlf-hero-content {
+    max-width: 100%;
+    padding: 3rem;
+  }
+
+  .nlf-hero-title {
+    font-size: 2.5rem;
+  }
+
+  .nlf-collection {
+    padding: 2rem 1.5rem;
+  }
+
+  .nlf-featured-card {
+    flex: 0 0 300px;
+  }
+}
+
+@media (max-width: 768px) {
+  .nlf-hero {
+    height: 70vh;
+  }
+
+  .nlf-hero-content {
+    padding: 2rem;
+    justify-content: center;
+  }
+
+  .nlf-hero-overlay {
+    background:
+      linear-gradient(
+        to top,
+        #0d0d0d 0%,
+        rgba(13, 13, 13, 0.8) 50%,
+        transparent 100%
+      );
+  }
+
+  .nlf-hero-title {
+    font-size: 2rem;
+  }
+
+  .nlf-hero-description {
+    font-size: 1rem;
+  }
+
+  .nlf-hero-actions {
+    flex-direction: column;
+  }
+
+  .nlf-btn {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .nlf-collection {
+    padding: 1.5rem 1rem;
+  }
+
+  .nlf-film-card {
+    flex: 0 0 140px;
+  }
+
+  .nlf-featured-card {
+    flex: 0 0 280px;
+  }
+
+  .nlf-categories {
+    padding: 1rem;
+  }
+
+  .nlf-masterp-header {
+    flex-direction: column;
+    text-align: center;
+  }
+}
+
