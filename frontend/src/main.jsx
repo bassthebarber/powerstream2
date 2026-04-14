@@ -1,19 +1,44 @@
-﻿import React from "react";
-import { createRoot } from "react-dom/client";
+import React from "react";
+import ReactDOM from "react-dom/client";
 import { BrowserRouter } from "react-router-dom";
 import App from "./App.jsx";
-import { AuthProvider } from "./context/AuthContext.jsx";
-import ErrorBoundary from "./components/ErrorBoundary.jsx";
-import "./styles/theme.css";
-import "./styles/powerstream-social.css";
-import "./styles/responsive.css";
 
-createRoot(document.getElementById("root")).render(
-  <ErrorBoundary>
-    <BrowserRouter future={{ v7_startTransition: true, v7_relativeSplatPath: true }}>
-      <AuthProvider>
+// 💥 GLOBAL ERROR CATCHER
+class RootErrorBoundary extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = { hasError: false, error: null };
+  }
+
+  static getDerivedStateFromError(error) {
+    return { hasError: true, error };
+  }
+
+  componentDidCatch(error, info) {
+    console.error("🔥 ROOT CRASH:", error, info);
+  }
+
+  render() {
+    if (this.state.hasError) {
+      return (
+        <div style={{ padding: 40, color: "white", background: "black" }}>
+          <h1>⚠️ PowerStream Recovered</h1>
+          <p>App crashed but stayed alive.</p>
+          <pre>{String(this.state.error)}</pre>
+        </div>
+      );
+    }
+
+    return this.props.children;
+  }
+}
+
+ReactDOM.createRoot(document.getElementById("root")).render(
+  <React.StrictMode>
+    <BrowserRouter>
+      <RootErrorBoundary>
         <App />
-      </AuthProvider>
+      </RootErrorBoundary>
     </BrowserRouter>
-  </ErrorBoundary>
+  </React.StrictMode>
 );

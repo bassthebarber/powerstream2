@@ -1,6 +1,5 @@
 import React from "react";
-import { NoLimitStation } from "../../../../pages/tv/NoLimit.jsx";
-
+import NoLimitStation from "../../../../pages/tv/NoLimit.jsx";
 /**
  * No Limit Gangsta TV — canonical implementation lives under components/tv/stations.
  * Uses registry slug `nolimit-gangsta` for branding; VOD/schedule data follows `nolimit` until split in Supabase.
