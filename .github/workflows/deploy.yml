@@ -1,4 +1,4 @@
-name: Deploy PowerStream
+Xname: Deploy PowerStream
 
 on:
   push:

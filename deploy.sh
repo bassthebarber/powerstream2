@@ -1,32 +1,28 @@
-#!/usr/bin/env bash
 set -e
+#!/bin/bash
 
-APP_ROOT="/var/www/powerstream_live/Powerstream"
-FRONTEND_DIR="$APP_ROOT/frontend"
-LIVE_DIR="/var/www/html"
+echo "🚀 DEPLOY STARTING..."
 
-echo "==> Deploy starting..."
+cd /var/www/powerstream_live
 
-cd "$APP_ROOT"
-
-echo "==> Pulling latest code"
 git pull origin main
 
-echo "==> Installing backend deps"
-cd backend || true
-npm install --production || true
+# CHANGE THIS LINE TO MATCH YOUR STRUCTURE
+cd frontend || { echo "❌ FRONTEND NOT FOUND"; exit 1; }
 
-echo "==> Building frontend"
-cd "$FRONTEND_DIR"
+echo "📦 Installing..."
 npm install
+
+echo "🏗 Building..."
 npm run build
 
-echo "==> Publishing to nginx"
-rm -rf "$LIVE_DIR"/*
-cp -r dist/* "$LIVE_DIR"/
+echo "🧹 Cleaning old site..."
+rm -rf /var/www/html/*
 
-echo "==> Restarting services"
-pm2 restart all || true
-systemctl restart nginx
+echo "📂 Deploying..."
+cp -r dist/* /var/www/html/
 
-echo "==> DONE"
+echo "🔁 Restarting backend..."
+pm2 restart all
+
+echo "✅ DEPLOY COMPLETE"
